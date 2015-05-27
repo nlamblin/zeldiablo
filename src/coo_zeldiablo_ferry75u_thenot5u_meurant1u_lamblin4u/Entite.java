@@ -5,6 +5,11 @@ public abstract class Entite {
 	
 	public final static int gauche = 1, haut = 2, droite = 3, bas = 4;
 	
+	public Entite(int xParam, int yParam) {
+		x = xParam;
+		y = yParam;
+	}
+	
 	public int getX(){
 		return this.x;
 	}
