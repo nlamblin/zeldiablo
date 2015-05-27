@@ -6,5 +6,9 @@ public class Aventurier extends Entite{
 		super(xParam, yParam);
 		// TODO Auto-generated constructor stub
 	}
+	
+	public String toString() {
+		return super.toString();
+	}
 
 }

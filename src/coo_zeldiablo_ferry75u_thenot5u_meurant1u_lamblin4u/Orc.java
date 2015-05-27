@@ -6,5 +6,9 @@ public class Orc extends Monstre{
 		super(xParam, yParam);
 		// TODO Auto-generated constructor stub
 	}
+	
+	public String toString() {
+		return super.toString();
+	}
 
 }

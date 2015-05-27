@@ -7,5 +7,7 @@ public abstract class Monstre extends Entite{
 		// TODO Auto-generated constructor stub
 	}
 
-	
+	public String toString() {
+		return super.toString();
+	}
 }
