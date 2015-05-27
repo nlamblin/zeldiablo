@@ -3,6 +3,8 @@ package coo_zeldiablo_ferry75u_thenot5u_meurant1u_lamblin4u;
 public abstract class Entite {
 	private int x,y;
 	
+	public final static int gauche = 1, haut = 2, droite = 3, bas = 4;
+	
 	public int getX(){
 		return this.x;
 	}
@@ -20,7 +22,8 @@ public abstract class Entite {
 		this.y = y1;
 	}
 
-	public abstract void seDeplacer(int direction);
-	
+	public void seDeplacer(int direction) {
+		
+	}
 
 }
