@@ -10,7 +10,7 @@ public class MoteurJeu {
 	public MoteurJeu(){
 		j = new Jeu();
 		lEntite = new ArrayList<Entite>();
-		av = new Aventurier();
+		av = new Aventurier(0,0);
 	}
 	public static void main(String[] args){
 		MoteurJeu m = new MoteurJeu();
@@ -19,19 +19,23 @@ public class MoteurJeu {
 		}
 	}
 	public void continuerJeu(){
-		
+		av.seDeplacer(demanderDirection());
+		for (Entite e : lEntite){
+			e.seDeplacer((int)(Math.random()*4+1));
+		}
 	}
 	public int demanderDirection(){
+		System.out.println("Entrez la direction");
 		Scanner sc = new Scanner(System.in);
 		switch (sc.nextLine()){
 		case "z":
-			return ;
+			return Entite.haut;
 		case "q":
-			return;
+			return Entite.gauche;
 		case "s": 
-			return;
+			return Entite.bas;
 		case "d":
-			return;
+			return Entite.droite;
 		default:
 			return -1;
 		}
