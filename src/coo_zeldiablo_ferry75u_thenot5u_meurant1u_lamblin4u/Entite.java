@@ -34,17 +34,22 @@ public abstract class Entite {
 			break;
 
 		case 2 :
-			setY(+1);
-			break;
-
-		case 3 :
-			setX(+1);
-			break;
-
-		case 4 :
 			setY(-1);
 			break;
 
+		case 3 :
+			setX(1);
+			break;
+
+		case 4 :
+			setY(1);
+			break;
+
 		}
+		
+	}
+	
+	public String toString(){
+		return(x+";"+y);
 	}
 }
