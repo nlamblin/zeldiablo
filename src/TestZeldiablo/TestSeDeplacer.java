@@ -42,6 +42,7 @@ public class TestSeDeplacer {
 		
 	}
 	
+	@Test
 	public void testSeDelacerErreur() {
 		Aventurier hero = new Aventurier(0,0);
 		hero.seDeplacer(42);
