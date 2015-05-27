@@ -19,8 +19,8 @@ public abstract class Entite {
 	public void setY(int y1){
 		this.y = y1;
 	}
-	
-	public abstract void seDeplacer();
+
+	public abstract void seDeplacer(int direction);
 	
 
 }
