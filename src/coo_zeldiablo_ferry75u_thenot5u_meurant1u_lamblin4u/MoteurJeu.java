@@ -20,8 +20,10 @@ public class MoteurJeu {
 	}
 	public void continuerJeu(){
 		av.seDeplacer(demanderDirection());
+		System.out.println(av.toString()+"\n");
 		for (Entite e : lEntite){
 			e.seDeplacer((int)(Math.random()*4+1));
+			System.out.println(e.toString()+"\n");
 		}
 	}
 	public int demanderDirection(){
