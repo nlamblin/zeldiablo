@@ -36,7 +36,7 @@ public class MonJeu implements Jeu {
 	 *            chaine qui donne ordre
 	 */
 	public void evoluer(Commande commande) {
-		this.getPj().deplacer(commande);
+		this.getPj().seDeplacer(commande);
 
 	}
 
