@@ -3,12 +3,14 @@ package monJeu;
 import java.util.ArrayList;
 import java.util.Scanner;
 
+import moteurJeu.Jeu;
+
 public class MoteurJeu {
-	private Jeu j;
+	private MonJeu j;
 	private ArrayList<Entite> lEntite;
 	private Aventurier av;
 	public MoteurJeu(){
-		j = new Jeu();
+		j = new MonJeu();
 		lEntite = new ArrayList<Entite>();
 		av = new Aventurier(0,0);
 	}
