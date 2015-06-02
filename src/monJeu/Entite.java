@@ -1,7 +1,7 @@
 package monJeu;
 
 public abstract class Entite {
-	private int x,y;
+	protected int x,y;
 
 	public final static int gauche = 1, haut = 2, droite = 3, bas = 4;
 

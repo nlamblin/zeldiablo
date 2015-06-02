@@ -5,13 +5,7 @@ import moteurJeu.Commande;
 /**
  * la classe correspondant au Personnage
  */
-public class Personnage {
-
-	/**
-	 * position en X et y
-	 */
-	public int x;
-	public int y;
+public class Personnage extends Entite{
 
 	/**
 	 * taille de l'environnement
@@ -22,7 +16,8 @@ public class Personnage {
 	/**
 	 * constructeur vide
 	 */
-	public Personnage() {
+	public Personnage(int xParam, int yParam) {
+		super(xParam, yParam);
 		this.x = LIMIT_X / 2;
 		this.y = LIMIT_Y / 2;
 	}
@@ -33,7 +28,7 @@ public class Personnage {
 	 * @param m
 	 *            la chaine permettant de deplacer le personnage (N,S, E ou O)
 	 */
-	public void deplacer(Commande c) {
+	public void seDeplacer(Commande c) {
 		
 		if (c.gauche)
 		{
