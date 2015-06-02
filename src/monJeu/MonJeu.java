@@ -19,7 +19,7 @@ public class MonJeu implements Jeu {
 	 * constructeur de jeu avec un Personnage
 	 */
 	public MonJeu() {
-		this.pj=new Personnage();
+		this.pj=new Personnage(1,1);
 	}
 
 	/**
