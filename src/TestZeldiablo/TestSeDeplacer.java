@@ -1,11 +1,10 @@
 package TestZeldiablo;
 
 import static org.junit.Assert.*;
+import monJeu.Aventurier;
+import monJeu.Entite;
 
 import org.junit.Test;
-
-import coo_zeldiablo_ferry75u_thenot5u_meurant1u_lamblin4u.Aventurier;
-import coo_zeldiablo_ferry75u_thenot5u_meurant1u_lamblin4u.Entite;
 
 public class TestSeDeplacer {
 

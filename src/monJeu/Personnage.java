@@ -48,6 +48,18 @@ public class Personnage {
 			if (this.x >LIMIT_X)
 				this.x = LIMIT_X;
 		}
+		if (c.haut)
+		{	
+			this.y--;
+			if(this.y < 0)
+				this.y = 0;
+		}
+		if (c.bas)
+		{
+			this.y++;
+			if(this.y > LIMIT_X)
+				this.y = LIMIT_X;
+		}
 	}
 
 	public String toString() {
