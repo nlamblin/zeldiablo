@@ -18,8 +18,6 @@ public class Personnage extends Entite{
 	 */
 	public Personnage(int xParam, int yParam) {
 		super(xParam, yParam);
-		this.x = LIMIT_X / 2;
-		this.y = LIMIT_Y / 2;
 	}
 
 	/**
