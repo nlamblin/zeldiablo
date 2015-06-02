@@ -3,16 +3,14 @@ package monJeu;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-import moteurJeu.Jeu;
-
 public class MoteurJeu {
-	private MonJeu j;
+	private MonJeu jeu;
 	private ArrayList<Entite> lEntite;
-	private Aventurier av;
+	private Personnage personnage;
 	public MoteurJeu(){
-		j = new MonJeu();
+		jeu = new MonJeu();
 		lEntite = new ArrayList<Entite>();
-		av = new Aventurier(0,0);
+		personnage = new Personnage(0,0);
 	}
 	public static void main(String[] args){
 		MoteurJeu m = new MoteurJeu();
@@ -21,8 +19,8 @@ public class MoteurJeu {
 		}
 	}
 	public void continuerJeu(){
-		av.seDeplacer(demanderDirection());
-		System.out.println(av.toString()+"\n");
+		personnage.seDeplacer(demanderDirection());
+		System.out.println(personnage.toString()+"\n");
 		for (Entite e : lEntite){
 			e.seDeplacer((int)(Math.random()*4+1));
 			System.out.println(e.toString()+"\n");
