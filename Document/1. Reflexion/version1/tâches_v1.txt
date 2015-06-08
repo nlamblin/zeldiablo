@@ -1,0 +1,13 @@
+Initialisation:
+
+création des personnages et d'un labyrinthe simple (pas aléatoirement au début)
+
+
+affichage des personnages : aventurier, monstres (orcs et fantômes)
+	validation : personnage présent sur une case et non présent sur une autre case
+
+
+affichage du labyrinthe : murs, entrée, talisman...
+	validation : présence d'une seule entrée et d'un seul talisman
+		les personnages ne se trouvent pas sur les murs 
+		
