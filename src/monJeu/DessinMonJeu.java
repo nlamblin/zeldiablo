@@ -16,7 +16,7 @@ public class DessinMonJeu implements DessinJeu {
 	/**
 	 * constante pour gerer la taille des cases
 	 */
-	private static int TAILLE_CASE = 25;
+	public static int TAILLE_CASE = 25;
 
 	/**
 	 * lien vers le jeu a afficher
@@ -58,23 +58,7 @@ public class DessinMonJeu implements DessinJeu {
 		Graphics2D crayon = (Graphics2D) im.getGraphics();
 		for (int i = 0;i < 15;i++){
 			for (int j = 0;j < 15;j++){
-				if (cases[j][i] instanceof CaseVide){
-					crayon.setColor(Color.LIGHT_GRAY);
-					System.out.print("O ");
-				}
-				else if(cases[j][i] instanceof Mur){
-					crayon.setColor(Color.DARK_GRAY);
-					System.out.print("M ");
-				}
-				else if(cases[j][i] instanceof Entree){
-					crayon.setColor(Color.GREEN);
-					System.out.print("E ");
-				}
-				else if(cases[j][i] instanceof Talisman){
-					crayon.setColor(Color.RED);
-					System.out.print("T ");
-				}
-				crayon.fillRect(i * TAILLE_CASE, j * TAILLE_CASE, TAILLE_CASE,TAILLE_CASE);
+				cases[i][j].afficher(j, i, crayon);
 			}
 		}
 	}
