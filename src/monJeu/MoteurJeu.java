@@ -14,7 +14,7 @@ public class MoteurJeu {
 	private Personnage personnage;
 	
 	public MoteurJeu(){
-		jeu = new MonJeu(MoteurJeu.chargerLabyrinthe("..\\"));
+		jeu = new MonJeu(MoteurJeu.chargerLabyrinthe("..\\Labyrinthe0.txt"));
 		lEntite = new ArrayList<Entite>();
 		personnage = new Personnage(0,0);
 	}

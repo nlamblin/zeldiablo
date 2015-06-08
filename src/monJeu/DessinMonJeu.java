@@ -54,13 +54,18 @@ public class DessinMonJeu implements DessinJeu {
 			throw new AssertionError("objet inexistant");
 		}
 	}
-
+	private 
 	/**
 	 * methode dessiner redefinie de Afficheur retourne une image du jeu
 	 */
 	public void dessiner(BufferedImage im) {
 		// no sait que c'est un jeuTest
 		MonJeu j = (MonJeu) jeu;
+		for (int i = 0;i<15;i++){
+			for (int j = 0;j<15;j++){
+				this.dessinerObjet()
+			}
+		}
 		Personnage pj = j.getPj();
 		this.dessinerObjet("PJ", pj.x, pj.y, im);
 	}
