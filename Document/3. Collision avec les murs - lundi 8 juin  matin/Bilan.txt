@@ -1,0 +1,14 @@
+décrit l'état de l'application et les difficultés rencontrées:
+
+Etat de l'application : 
+
+-> le labyrinthe fait une taille de 15,15;
+-> le personnage est situé par défaut au centre du labyrinthe (8,8);
+-> le labyrinthe est initialisé grâce à un fichier (des murs sont visibles, ainsi qu'une entrée et un talisman)
++
+-> le personnage et toutes autres entités ne peuvent pas traverser les murs
+
+
+Difficultées rencontrées : 
+-> modelisation grâce à un fichier pour faciliter les différents niveaux  
+-> difficulté pour la récupération des cases
