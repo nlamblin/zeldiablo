@@ -22,4 +22,5 @@ public class Orc extends Monstre{
 		g.fillOval(x * DessinMonJeu.TAILLE_CASE, y * DessinMonJeu.TAILLE_CASE, DessinMonJeu.TAILLE_CASE,DessinMonJeu.TAILLE_CASE);
 	}
 
+
 }

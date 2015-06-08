@@ -2,6 +2,11 @@ package monJeu;
 
 import java.awt.Graphics2D;
 import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
+import java.util.ArrayList;
+
+import javax.imageio.ImageIO;
 
 import moteurJeu.Commande;
 
@@ -13,13 +18,28 @@ public abstract class Entite {
 	public final static int gauche = 0, haut = 1, droite = 2, bas = 3;
 	protected MonJeu j;
 	protected BufferedImage image;
+	protected BufferedImage imageHaut;
+	protected BufferedImage imageBas;
+	protected BufferedImage imageGauche;
+	protected BufferedImage imageDroite;
 	public Entite(int xParam, int yParam,MonJeu jeu) {
 		j = jeu;
 		x = xParam;
 		y = yParam;
 	}
-	public void attacherImage(BufferedImage bi){
-		this.image= bi;
+	public void changerImage(Commande c){
+		if (c.bas){
+			image = imageBas;
+		}
+		if (c.haut){
+			image = imageHaut;
+		}
+		if (c.gauche){
+			image = imageGauche;
+		}
+		if (c.droite){
+			image = imageDroite;
+		}
 	}
 	public int getX(){
 		return this.x;
