@@ -1,11 +1,16 @@
 package monJeu;
 
+import moteurJeu.Commande;
+
 public abstract class Entite {
 	protected int x,y;
-
+	final static int LIMIT_X = 14;
+	final static int LIMIT_Y = 14;
 	public final static int gauche = 1, haut = 2, droite = 3, bas = 4;
-
-	public Entite(int xParam, int yParam) {
+	private MonJeu j;
+	
+	public Entite(int xParam, int yParam,MonJeu jeu) {
+		j = jeu;
 		x = xParam;
 		y = yParam;
 	}
@@ -27,26 +32,34 @@ public abstract class Entite {
 		this.y += y1;
 	}
 
-	public void seDeplacer(int direction) {
-		switch(direction){
-		case 1:
-			setX(-1);
-			break;
-
-		case 2 :
-			setY(-1);
-			break;
-
-		case 3 :
-			setX(1);
-			break;
-
-		case 4 :
-			setY(1);
-			break;
-
-		}
+	public void seDeplacer(Commande c) {
 		
+		if (c.gauche)
+		{
+			this.x--;
+			if (this.x < 0)
+				this.x = 0;
+		}
+
+		if (c.droite)
+		{
+			this.x++;
+			if (this.x >LIMIT_X)
+				this.x = LIMIT_X;
+		}
+		if (c.haut)
+		{	
+			this.y--;
+			if(this.y < 0)
+				this.y = 0;
+		}
+		if (c.bas)
+		{
+			this.y++;
+			if(this.y > LIMIT_X)
+				this.y = LIMIT_X;
+		}
+	}
 	}
 	
 	public String toString(){

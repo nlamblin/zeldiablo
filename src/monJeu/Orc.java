@@ -2,8 +2,8 @@ package monJeu;
 
 public class Orc extends Monstre{
 
-	public Orc(int xParam, int yParam) {
-		super(xParam, yParam);
+	public Orc(int xParam, int yParam,MonJeu jeu) {
+		super(xParam, yParam,jeu);
 		// TODO Auto-generated constructor stub
 	}
 	
