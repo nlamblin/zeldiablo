@@ -21,7 +21,11 @@ public class Personnage extends Entite{
 	public Personnage(int xParam, int yParam,MonJeu jeu) {
 		super(xParam, yParam,jeu);
 		try {
-			attacherImage(ImageIO.read(new File("../coo_zeldiablo_ferry75u_thenot5u_meurant1u_lamblin4u/src/image/PersoBas.png")));
+			imageGauche=ImageIO.read(new File("../coo_zeldiablo_ferry75u_thenot5u_meurant1u_lamblin4u/src/image/PersoGauche.png"));
+			imageHaut=ImageIO.read(new File("../coo_zeldiablo_ferry75u_thenot5u_meurant1u_lamblin4u/src/image/PersoHaut.png"));
+			imageDroite=ImageIO.read(new File("../coo_zeldiablo_ferry75u_thenot5u_meurant1u_lamblin4u/src/image/PersoDroite.png"));
+			imageBas=ImageIO.read(new File("../coo_zeldiablo_ferry75u_thenot5u_meurant1u_lamblin4u/src/image/PersoBas.png"));
+			image = imageBas;
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

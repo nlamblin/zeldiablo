@@ -42,6 +42,7 @@ public class MonJeu implements Jeu {
 	 */
 	public void evoluer(Commande commande) {
 		this.getPj().seDeplacer(commande);
+		getPj().changerImage(commande);
 		try{
 			Thread.sleep(100);
 		}
