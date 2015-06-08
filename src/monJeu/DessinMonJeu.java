@@ -3,6 +3,7 @@ package monJeu;
 import java.awt.Color;
 import java.awt.Graphics2D;
 import java.awt.image.BufferedImage;
+import java.util.ArrayList;
 
 import moteurJeu.DessinJeu;
 
@@ -41,9 +42,7 @@ public class DessinMonJeu implements DessinJeu {
 		Graphics2D crayon = (Graphics2D) im.getGraphics();
 		switch (s) {
 		case "PJ":
-			crayon.setColor(Color.blue);
-			crayon.fillOval(x * TAILLE_CASE, y * TAILLE_CASE, TAILLE_CASE,
-					TAILLE_CASE);
+			jeu.pj.afficher(crayon);
 			break;
 		case "MUR":
 			crayon.setColor(Color.gray);
@@ -62,6 +61,12 @@ public class DessinMonJeu implements DessinJeu {
 			}
 		}
 	}
+	private void dessinerEntite(ArrayList<Entite> le,BufferedImage im){
+		Graphics2D crayon = (Graphics2D) im.getGraphics();
+		for (Entite e : le){
+			e.afficher(crayon);
+		}
+	}
 	/**
 	 * methode dessiner redefinie de Afficheur retourne une image du jeu
 	 */
@@ -69,6 +74,7 @@ public class DessinMonJeu implements DessinJeu {
 		// no sait que c'est un jeuTest
 		MonJeu j = (MonJeu) jeu;
 		dessinerCases(j.lCase,im);
+		dessinerEntite(j.lEntite,im);
 		Personnage pj = j.getPj();
 		this.dessinerObjet("PJ", pj.x, pj.y, im);
 	}

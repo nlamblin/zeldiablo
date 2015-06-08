@@ -1,5 +1,7 @@
 package monJeu;
 
+import java.util.ArrayList;
+
 import moteurJeu.Commande;
 import moteurJeu.Jeu;
 
@@ -13,12 +15,14 @@ public class MonJeu implements Jeu {
 	/**
 	 * le personnage du jeu
 	 */
-	private Personnage pj;
+	public Personnage pj;
 	public Case[][] lCase;
+	public ArrayList<Entite> lEntite;
 	/**
 	 * constructeur de jeu avec un Personnage
 	 */
 	public MonJeu(Case[][] lC) {
+		lEntite = new ArrayList<Entite>();
 		lCase = lC;
 		this.pj=new Personnage(Personnage.LIMIT_X/2,Personnage.LIMIT_Y/2,this);
 	}
@@ -38,7 +42,13 @@ public class MonJeu implements Jeu {
 	 */
 	public void evoluer(Commande commande) {
 		this.getPj().seDeplacer(commande);
-
+		try{
+			Thread.sleep(100);
+		}
+		catch(Exception e){}
+		for (Entite e : lEntite){
+			evoluerEntite(e);
+		}
 	}
 
 	@Override
@@ -46,7 +56,47 @@ public class MonJeu implements Jeu {
 		// le jeu n'est jamais fini
 		return false;
 	}
-
+	public void evoluerEntite(Entite e){
+		Commande c = new Commande();
+		int deplacement=-1;
+		
+		if (e.x < pj.x+3 && e.x > pj.x-3 && e.y < pj.y+3 && e.y > pj.y -3){
+			if(e.x >= pj.x && e.y >= pj.y){
+				if (e.x-pj.x >= e.y-pj.y)deplacement = Entite.gauche;
+				else deplacement = Entite.haut;
+			}
+			if (e.x >= pj.x && e.y < pj.y){
+				if (e.x-pj.x > pj.y-e.y)deplacement = Entite.gauche;
+				else deplacement = Entite.bas;
+			}
+			if (e.x < pj.x && e.y >= pj.y){
+				if (pj.x-e.x > e.y-pj.y)deplacement = Entite.droite;
+				else deplacement = Entite.haut;
+			}
+			if (e.x < pj.x && e.y < pj.y){
+				if (pj.x-e.x > pj.y-e.y)deplacement = Entite.droite;
+				else deplacement = Entite.bas;
+			}
+		}
+		else{
+			deplacement = (int)(Math.random()*10);
+		}
+		switch (deplacement){
+		case Entite.gauche:
+			c.gauche = true;
+			break;
+		case Entite.droite:
+			c.droite = true;
+			break;
+		case Entite.haut:
+			c.haut = true;
+			break;
+		case Entite.bas:
+			c.bas = true;
+			break;
+		}
+		e.seDeplacer(c);
+	}
 	/**
 	 * getter pour l'affichage
 	 * 
@@ -55,5 +105,7 @@ public class MonJeu implements Jeu {
 	public Personnage getPj() {
 		return pj;
 	}
-
+	public void setMonstres(ArrayList<Entite> le){
+		lEntite = le;
+	}
 }

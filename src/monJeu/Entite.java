@@ -1,13 +1,16 @@
 package monJeu;
 
+import java.awt.Graphics2D;
+
 import moteurJeu.Commande;
 
 public abstract class Entite {
 	protected int x,y;
+	protected int pv;
 	final static int LIMIT_X = 15;
 	final static int LIMIT_Y = 15;
-	public final static int gauche = 1, haut = 2, droite = 3, bas = 4;
-	private MonJeu j;
+	public final static int gauche = 0, haut = 1, droite = 2, bas = 3;
+	protected MonJeu j;
 	
 	public Entite(int xParam, int yParam,MonJeu jeu) {
 		j = jeu;
@@ -37,9 +40,20 @@ public abstract class Entite {
 		if (c.gauche){
 			if (this.x > 0)
 			if (j.lCase[y][x-1].etreTraversable()){
-				this.x--;
-				if (this.x < 0)
-					this.x = 0;
+				boolean Ent = false;
+				if (j.pj.x == x-1 && j.pj.y== y){
+					Ent = true;
+				}
+				for (Entite e: j.lEntite){
+					if (this.x-1==e.x && this.y == e.y){
+						Ent = true;
+					}
+				}
+				if (!Ent){
+					this.x--;
+					if (this.x < 0)
+						this.x = 0;
+				}
 			}
 		}
 
@@ -47,32 +61,72 @@ public abstract class Entite {
 		{
 			if (this.x <LIMIT_X)
 			if (j.lCase[y][x+1].etreTraversable()){
-				this.x++;
-				if (this.x >LIMIT_X)
-					this.x = LIMIT_X;
+				
+				boolean Ent = false;
+				if (j.pj.x == x+1 && j.pj.y== y){
+					Ent = true;
+				}
+				for (Entite e: j.lEntite){
+					if (this.x+1==e.x && this.y == e.y){
+						Ent = true;
+					}
+				}
+				if (!Ent){
+					this.x++;
+					if (this.x >LIMIT_X)
+						this.x = LIMIT_X;
+				}
 			}
 		}
 		if (c.haut)
 		{	
 			if(this.y > 0)
 			if (j.lCase[y-1][x].etreTraversable()){
-				this.y--;
-				if(this.y < 0)
-					this.y = 0;
+				boolean Ent = false;
+				if (j.pj.x == x && j.pj.y== y-1){
+					Ent = true;
 				}
+				for (Entite e: j.lEntite){
+					if (this.x==e.x && this.y-1 == e.y){
+						Ent = true;
+					}
+				}
+				if (!Ent){
+					this.y--;
+					if(this.y < 0)
+						this.y = 0;
+				}
+				
+			}
 		}
 		if (c.bas)
 		{
 			if(this.y < LIMIT_X)
 			if (j.lCase[y+1][x].etreTraversable()){
-				this.y++;
-				if(this.y > LIMIT_X)
-					this.y = LIMIT_X;
+				boolean Ent = false;
+				if (j.pj.x == x && j.pj.y== y+1){
+					Ent = true;
+				}
+				for (Entite e: j.lEntite){
+					if (this.x==e.x && this.y+1 == e.y){
+						Ent = true;
+					}
+				}
+				if (!Ent){
+					this.y++;
+					if(this.y > LIMIT_X)
+						this.y = LIMIT_X;
+				}
+				
 			}
 		}
 	}
 	
 	public String toString(){
 		return(x+";"+y);
+	}
+	public abstract void afficher(Graphics2D g);
+	public boolean etreMort(){
+		return pv <=0;
 	}
 }

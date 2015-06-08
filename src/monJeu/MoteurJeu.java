@@ -49,4 +49,31 @@ public class MoteurJeu {
 		}
 		return lC;
 	}
+	public static ArrayList<Entite> chargerMonstres(String fileName,MonJeu jeu){
+		ArrayList<Entite> le = new ArrayList<Entite>();
+		try {
+			BufferedReader br = new BufferedReader(new FileReader(fileName));
+			for (int i =0;i<16;i++){
+				String lab =br.readLine();
+				for(int j = 0;j<16;j++){
+					switch (lab.charAt(j)){
+					case 'F':
+						Fantome f = new Fantome(j,i, jeu);
+						le.add(f);
+						break;
+					case 'O':
+						Orc o = new Orc(j,i, jeu);
+						le.add(o);
+						break;
+					}
+				}
+			}
+			
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		return le;
+	}
 }
