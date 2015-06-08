@@ -4,9 +4,8 @@ Etat de l'application :
 
 ->   Le talisman ne peut être placé que sur une case vide.
 ->   Les monstres et le héros peuvent se situer sur la case du talisman.
-->   Le talisman est affiché dans le jeu sur une case vide.
 ->   Le talisman n'est plus sur le plateau lorsque le héro le prend(et n'est plus affiché).
-->   Un monstre ne récup ère pas l'amulette.
+->   Un monstre ne récupère pas l'amulette.
 
 Difficultées rencontrées:
 
