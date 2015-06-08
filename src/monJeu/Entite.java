@@ -34,32 +34,42 @@ public abstract class Entite {
 
 	public void seDeplacer(Commande c) {
 		
-		if (c.gauche)
-		{
-			this.x--;
-			if (this.x < 0)
-				this.x = 0;
+		if (c.gauche){
+			if (this.x > 0)
+			if (j.lCase[y][x-1].etreTraversable()){
+				this.x--;
+				if (this.x < 0)
+					this.x = 0;
+			}
 		}
 
 		if (c.droite)
 		{
-			this.x++;
-			if (this.x >LIMIT_X)
-				this.x = LIMIT_X;
+			if (this.x <LIMIT_X)
+			if (j.lCase[y][x+1].etreTraversable()){
+				this.x++;
+				if (this.x >LIMIT_X)
+					this.x = LIMIT_X;
+			}
 		}
 		if (c.haut)
 		{	
-			this.y--;
-			if(this.y < 0)
-				this.y = 0;
+			if(this.y > 0)
+			if (j.lCase[y-1][x].etreTraversable()){
+				this.y--;
+				if(this.y < 0)
+					this.y = 0;
+				}
 		}
 		if (c.bas)
 		{
-			this.y++;
-			if(this.y > LIMIT_X)
-				this.y = LIMIT_X;
+			if(this.y < LIMIT_X)
+			if (j.lCase[y+1][x].etreTraversable()){
+				this.y++;
+				if(this.y > LIMIT_X)
+					this.y = LIMIT_X;
+			}
 		}
-	}
 	}
 	
 	public String toString(){

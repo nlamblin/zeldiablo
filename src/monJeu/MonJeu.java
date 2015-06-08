@@ -20,7 +20,7 @@ public class MonJeu implements Jeu {
 	 */
 	public MonJeu(Case[][] lC) {
 		lCase = lC;
-		this.pj=new Personnage(Personnage.LIMIT_X/2,Personnage.LIMIT_Y/2);
+		this.pj=new Personnage(Personnage.LIMIT_X/2,Personnage.LIMIT_Y/2,this);
 	}
 
 	/**

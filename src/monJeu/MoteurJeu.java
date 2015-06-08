@@ -16,7 +16,7 @@ public class MoteurJeu {
 	public MoteurJeu(){
 		jeu = new MonJeu(MoteurJeu.chargerLabyrinthe("../coo_zeldiablo_ferry75u_thenot5u_meurant1u_lamblin4u/Labyrinthe0.txt"));
 		lEntite = new ArrayList<Entite>();
-		personnage = new Personnage(0,0);
+		personnage = new Personnage(0,0,jeu);
 	}
 	public static Case[][] chargerLabyrinthe(String fileName){
 		Case[][] lC = new Case[15][15];
