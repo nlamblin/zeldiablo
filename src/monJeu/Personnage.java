@@ -12,7 +12,6 @@ public class Personnage extends Entite{
 	 */
 	final static int LIMIT_X = 15;
 	final static int LIMIT_Y = 15;
-
 	/**
 	 * constructeur vide
 	 */
