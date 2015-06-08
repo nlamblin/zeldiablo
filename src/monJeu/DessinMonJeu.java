@@ -1,6 +1,7 @@
 package monJeu;
 
 import java.awt.Color;
+import java.awt.Font;
 import java.awt.Graphics2D;
 import java.awt.image.BufferedImage;
 import java.util.ArrayList;
@@ -67,6 +68,12 @@ public class DessinMonJeu implements DessinJeu {
 			e.afficher(crayon);
 		}
 	}
+	private void dessinerFin(BufferedImage im){
+		Graphics2D crayon = (Graphics2D) im.getGraphics();
+		crayon.setFont(new Font(Font.SERIF,Font.PLAIN,100));
+		crayon.setColor(Color.CYAN);
+		crayon.drawString("Jeu fini!!!",0,200);
+	}
 	/**
 	 * methode dessiner redefinie de Afficheur retourne une image du jeu
 	 */
@@ -77,6 +84,9 @@ public class DessinMonJeu implements DessinJeu {
 		dessinerEntite(j.lEntite,im);
 		Personnage pj = j.getPj();
 		this.dessinerObjet("PJ", pj.x, pj.y, im);
+		if (jeu.etreFini()){
+			dessinerFin(im);
+		}
 	}
 
 }

@@ -72,5 +72,14 @@ public class Personnage extends Entite{
 			talisment = true;
 			j.lCase[y][x] = new CaseVide();
 		}
+		if (j.lCase[y][x] instanceof Entree && talisment){
+			j.seFinir();
+		}
+	}
+
+	@Override
+	public Commande IACommande() {
+		// TODO Auto-generated method stub
+		return new Commande();
 	}
 }
