@@ -24,7 +24,17 @@ public class MonJeu implements Jeu {
 	public MonJeu(Case[][] lC) {
 		lEntite = new ArrayList<Entite>();
 		lCase = lC;
-		this.pj=new Personnage(Personnage.LIMIT_X/2,Personnage.LIMIT_Y/2,this);
+		int i = 0;
+		int j = 0;
+		boolean trouv = false;
+		for(i = 0,j=0;i<lC.length&&!trouv;i++){
+			for (j = 0;j< lC.length&&!trouv;j++){
+				if (lC[i][j] instanceof Entree){
+					trouv = true;
+				}
+			}
+		}
+		this.pj=new Personnage(j-1,i-1,this);
 	}
 
 	/**
