@@ -53,6 +53,14 @@ public class Personnage extends Entite{
 				this.y = LIMIT_X;
 		}
 	}
+	
+	public static int getLimitX() {
+		return LIMIT_X;
+	}
+
+	public static int getLimitY() {
+		return LIMIT_Y;
+	}
 
 	public String toString() {
 		return ("(" + this.x+","+this.y+")");
