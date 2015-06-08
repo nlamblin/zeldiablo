@@ -1,0 +1,15 @@
+décrit l'état de l'application et les difficultés rencontrées:
+
+Etat de l'application : 
+
+-> Au lancement du jeu, le jeu ajoute  différents monstres dans l'environnement
+-> A chaque fois que les monstres se déplacent, les monstres tentent de réduire leur distance à vol d'oiseau par rapport au héros
+-> Il est possible de construire un labyrinthe par défaut contenant quelques monstres
+-> Il est possible de construire un labyrinthe par défaut contenant quelques monstres
+-> Il n'est pas possible de générer des monstres sur des cases non vides (position du joueur, d'autres monstres ou de murs
+-> Après son déplacement, un monstre doit être plus proche du héros qu'avant son déplacement (distance de Manhattan 	sans prise en compte des murs).
+-> Les monstres soumis aux obstacles peuvent se retrouver bloqués dans des cul-de-sac
+
+Difficultées rencontrées:
+
+-> gestion des collisions entre les monstres et le joueur
