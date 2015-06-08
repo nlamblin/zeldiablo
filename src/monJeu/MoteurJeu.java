@@ -19,12 +19,12 @@ public class MoteurJeu {
 		personnage = new Personnage(0,0,jeu);
 	}
 	public static Case[][] chargerLabyrinthe(String fileName){
-		Case[][] lC = new Case[15][15];
+		Case[][] lC = new Case[16][16];
 		try {
 			BufferedReader br = new BufferedReader(new FileReader(fileName));
-			for (int i =0;i<15;i++){
+			for (int i =0;i<16;i++){
 				String lab =br.readLine();
-				for(int j = 0;j<15;j++){
+				for(int j = 0;j<16;j++){
 					switch (lab.charAt(j)){
 					case 'M':
 						lC[i][j]=new Mur();

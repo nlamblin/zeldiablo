@@ -56,8 +56,8 @@ public class DessinMonJeu implements DessinJeu {
 	}
 	private void dessinerCases(Case[][] cases,BufferedImage im){
 		Graphics2D crayon = (Graphics2D) im.getGraphics();
-		for (int i = 0;i < 15;i++){
-			for (int j = 0;j < 15;j++){
+		for (int i = 0;i < 16;i++){
+			for (int j = 0;j < 16;j++){
 				cases[i][j].afficher(j, i, crayon);
 			}
 		}

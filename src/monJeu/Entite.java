@@ -4,8 +4,8 @@ import moteurJeu.Commande;
 
 public abstract class Entite {
 	protected int x,y;
-	final static int LIMIT_X = 14;
-	final static int LIMIT_Y = 14;
+	final static int LIMIT_X = 15;
+	final static int LIMIT_Y = 15;
 	public final static int gauche = 1, haut = 2, droite = 3, bas = 4;
 	private MonJeu j;
 	
