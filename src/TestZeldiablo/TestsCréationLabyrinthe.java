@@ -14,8 +14,8 @@ public class TestsCréationLabyrinthe {
 
 	@Test
 	public void testTailleLabyrinthe() {
-		assertEquals("le personnage devrait être de 14,14",14, Personnage.getLimitX());
-		assertEquals("le personnage devrait être de 14,14",14, Personnage.getLimitY());
+		assertEquals("le personnage devrait être de 15,15",15, Personnage.getLimitX());
+		assertEquals("le personnage devrait être de 15,15",15, Personnage.getLimitY());
 
 		
 }
