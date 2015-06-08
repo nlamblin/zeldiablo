@@ -2,6 +2,10 @@ package monJeu;
 
 import java.awt.Color;
 import java.awt.Graphics2D;
+import java.io.File;
+import java.io.IOException;
+
+import javax.imageio.ImageIO;
 
 import moteurJeu.Commande;
 
@@ -10,6 +14,16 @@ public class Fantome extends Monstre{
 	public Fantome(int xParam, int yParam,MonJeu jeu) {
 		super(xParam, yParam,jeu);
 		pv = 1;
+		try {
+			imageHaut=ImageIO.read(new File("../coo_zeldiablo_ferry75u_thenot5u_meurant1u_lamblin4u/src/image/FantomeHaut.png"));
+			imageBas=ImageIO.read(new File("../coo_zeldiablo_ferry75u_thenot5u_meurant1u_lamblin4u/src/image/FantomeBas.png"));
+			imageGauche=ImageIO.read(new File("../coo_zeldiablo_ferry75u_thenot5u_meurant1u_lamblin4u/src/image/FantomeDroite.png"));
+			imageDroite=ImageIO.read(new File("../coo_zeldiablo_ferry75u_thenot5u_meurant1u_lamblin4u/src/image/FantomeDroite.png"));
+			image = imageDroite;
+		}
+		catch(IOException e) {
+			e.printStackTrace();
+		}
 		// TODO Auto-generated constructor stub
 	}
 
@@ -21,7 +35,8 @@ public class Fantome extends Monstre{
 	public void afficher(Graphics2D g) {
 		// TODO Auto-generated method stub
 		g.setColor(Color.WHITE);
-		g.fillOval(x * DessinMonJeu.TAILLE_CASE, y * DessinMonJeu.TAILLE_CASE, DessinMonJeu.TAILLE_CASE,DessinMonJeu.TAILLE_CASE);
+		if (image ==null)g.fillOval(x * DessinMonJeu.TAILLE_CASE, y * DessinMonJeu.TAILLE_CASE, DessinMonJeu.TAILLE_CASE,DessinMonJeu.TAILLE_CASE);
+		else g.drawImage(image, null, x * DessinMonJeu.TAILLE_CASE, y * DessinMonJeu.TAILLE_CASE);
 	}
 	@Override
 	public void seDeplacer(Commande c) {

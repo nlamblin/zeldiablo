@@ -97,6 +97,7 @@ public class MonJeu implements Jeu {
 			break;
 		}
 		e.seDeplacer(c);
+		e.changerImage(c);
 	}
 	/**
 	 * getter pour l'affichage
