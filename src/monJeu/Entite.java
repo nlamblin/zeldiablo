@@ -1,6 +1,7 @@
 package monJeu;
 
 import java.awt.Graphics2D;
+import java.awt.image.BufferedImage;
 
 import moteurJeu.Commande;
 
@@ -11,13 +12,15 @@ public abstract class Entite {
 	final static int LIMIT_Y = 15;
 	public final static int gauche = 0, haut = 1, droite = 2, bas = 3;
 	protected MonJeu j;
-	
+	protected BufferedImage image;
 	public Entite(int xParam, int yParam,MonJeu jeu) {
 		j = jeu;
 		x = xParam;
 		y = yParam;
 	}
-
+	public void attacherImage(BufferedImage bi){
+		this.image= bi;
+	}
 	public int getX(){
 		return this.x;
 	}

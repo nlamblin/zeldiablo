@@ -1,8 +1,12 @@
 package monJeu;
 
 import java.awt.Color;
+import java.awt.Graphics;
 import java.awt.Graphics2D;
+import java.awt.Image;
 import java.awt.image.BufferedImage;
+import java.awt.image.ImageObserver;
+import java.awt.image.ImageProducer;
 import java.io.*;
 
 import javax.imageio.ImageIO;
@@ -11,12 +15,17 @@ import javax.imageio.ImageIO;
  * la classe correspondant au Personnage
  */
 public class Personnage extends Entite{
-
 	/**
 	 * constructeur vide
 	 */
 	public Personnage(int xParam, int yParam,MonJeu jeu) {
 		super(xParam, yParam,jeu);
+		try {
+			attacherImage(ImageIO.read(new File("../coo_zeldiablo_ferry75u_thenot5u_meurant1u_lamblin4u/src/image/PersoBas.png")));
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		pv = 10;
 	}
 
@@ -44,6 +53,7 @@ public class Personnage extends Entite{
 	public void afficher(Graphics2D g) {
 		// TODO Auto-generated method stub
 		g.setColor(Color.blue);
-		g.fillOval(x * DessinMonJeu.TAILLE_CASE, y * DessinMonJeu.TAILLE_CASE, DessinMonJeu.TAILLE_CASE,DessinMonJeu.TAILLE_CASE);
+		if (image ==null)g.fillOval(x * DessinMonJeu.TAILLE_CASE, y * DessinMonJeu.TAILLE_CASE, DessinMonJeu.TAILLE_CASE,DessinMonJeu.TAILLE_CASE);
+		else g.drawImage(image, null, x * DessinMonJeu.TAILLE_CASE, y * DessinMonJeu.TAILLE_CASE);
 	}
 }
