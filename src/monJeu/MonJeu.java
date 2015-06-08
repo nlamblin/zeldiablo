@@ -1,4 +1,4 @@
-package monJeu;
+dpackage monJeu;
 
 import java.util.ArrayList;
 
