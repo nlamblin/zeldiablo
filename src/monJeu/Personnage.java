@@ -2,18 +2,15 @@ package monJeu;
 
 import java.awt.Color;
 import java.awt.Graphics2D;
+import java.awt.image.BufferedImage;
+import java.io.*;
 
-import moteurJeu.Commande;
+import javax.imageio.ImageIO;
 
 /**
  * la classe correspondant au Personnage
  */
 public class Personnage extends Entite{
-
-	/**
-	 * taille de l'environnement
-	 */
-	
 
 	/**
 	 * constructeur vide
@@ -49,5 +46,4 @@ public class Personnage extends Entite{
 		g.setColor(Color.blue);
 		g.fillOval(x * DessinMonJeu.TAILLE_CASE, y * DessinMonJeu.TAILLE_CASE, DessinMonJeu.TAILLE_CASE,DessinMonJeu.TAILLE_CASE);
 	}
-
 }
