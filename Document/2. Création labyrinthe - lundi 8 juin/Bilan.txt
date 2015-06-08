@@ -1,0 +1,4 @@
+décrit l'état de l'application et les difficultés rencontrées:
+
+- le labyrinthe fait une taille de 15,15;
+- le personnage est situé au centre du labyrinthe (8,8);
