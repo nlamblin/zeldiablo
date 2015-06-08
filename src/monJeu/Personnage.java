@@ -10,8 +10,8 @@ public class Personnage extends Entite{
 	/**
 	 * taille de l'environnement
 	 */
-	final static int LIMIT_X = 15;
-	final static int LIMIT_Y = 15;
+	final static int LIMIT_X = 14;
+	final static int LIMIT_Y = 14;
 	/**
 	 * constructeur vide
 	 */

@@ -14,7 +14,7 @@ public class MonJeu implements Jeu {
 	 * le personnage du jeu
 	 */
 	private Personnage pj;
-	private Case[][] lCase;
+	public Case[][] lCase;
 	/**
 	 * constructeur de jeu avec un Personnage
 	 */
