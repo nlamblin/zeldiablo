@@ -12,8 +12,23 @@ public abstract class Monstre extends Entite{
 	}
 	
 	public void attaquer(){
-		if ((this.x == j.pj.x+1 || this.x == j.pj.x-1) && (this.y == j.pj.y+1 || this.y == j.pj.y-1)){
-			j.pj.subirDegats(this.getDegats());
+		switch(orientation) {
+		case Entite.haut:
+			if(this.x == j.pj.getX() && this.y == j.pj.getY()-1)
+				j.pj.subirDegats(this.getDegats());
+			break;
+		case Entite.bas:
+			if(this.x == j.pj.getX() && this.y == j.pj.getY()+1)
+				j.pj.subirDegats(this.getDegats());
+			break;
+		case Entite.gauche:
+			if(this.x == j.pj.getX()-1 && this.y == j.pj.getY())
+				j.pj.subirDegats(this.getDegats());
+			break;
+		case Entite.droite:
+			if(this.x == j.pj.getX()+1 && this.y == j.pj.getY())
+				j.pj.subirDegats(this.getDegats());
+			break;
 		}
 	}
 }

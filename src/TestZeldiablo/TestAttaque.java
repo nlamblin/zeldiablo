@@ -85,4 +85,5 @@ public class TestAttaque {
 	
 		assertEquals("Le personnage n'aurait pas du perdre de point de vie", o.getPv(), pvAvantAttaque);
 	}
+	
 }
