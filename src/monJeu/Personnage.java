@@ -94,4 +94,12 @@ public class Personnage extends Entite{
 	public int getDegats(){
 		return degats=1;
 	}
+	
+	public void attaquer(Entite e){
+		// TODO 
+	}
+	
+	public void subirDegats(int i){
+		// TODO
+	}
 }
