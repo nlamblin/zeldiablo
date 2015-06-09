@@ -26,7 +26,6 @@ public class Controleur implements KeyListener {
 	 */
 	public Controleur() {
 		this.commandeEnCours = new Commande();
-		this.commandeARetourner = new Commande();
 	}
 
 	/**
@@ -36,9 +35,7 @@ public class Controleur implements KeyListener {
 	 * @return commande faite par le joueur
 	 */
 	public Commande getCommande() {
-		Commande aRetourner = this.commandeARetourner;
-		this.commandeARetourner = new Commande(this.commandeEnCours);
-		return (aRetourner);
+		return this.commandeEnCours;
 	}
 
 	@Override
@@ -51,22 +48,18 @@ public class Controleur implements KeyListener {
 		// si on appuie sur 'q',commande joueur est gauche
 		case 'q':
 			this.commandeEnCours.gauche = true;
-			this.commandeARetourner.gauche = true;
 			break;
 		// si on appuie sur 'd',commande joueur est droite
 		case 'd':
 			this.commandeEnCours.droite = true;
-			this.commandeARetourner.droite = true;
 			break;
 		// si on appuie sur 'z',commande joueur est haut
 		case 'z':
 			this.commandeEnCours.haut = true;
-			this.commandeARetourner.haut = true;
 			break;
 		// si on appuie sur 's',commande joueur est bas
 		case 's':
 			this.commandeEnCours.bas = true;
-			this.commandeARetourner.bas = true;
 			break;
 		}
 

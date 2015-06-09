@@ -1,0 +1,37 @@
+package monJeu;
+
+import java.awt.Color;
+import java.awt.Graphics2D;
+import java.util.ArrayList;
+class Coordonnee{
+	public int x,y;
+	public Coordonnee(int x,int y){
+		this.x=x;
+		this.y=y;
+	}
+}
+public class Activateur implements Case {
+	private ArrayList<Coordonnee> aact;
+	public Activateur(){
+		aact = new ArrayList<Coordonnee>();
+	}
+	public void attacher(Coordonnee c){
+		aact.add(c);
+	}
+	@Override
+	public boolean etreTraversable() {
+		// TODO Auto-generated method stub
+		return true;
+	}
+
+	@Override
+	public void afficher(int i, int j, Graphics2D g) {
+		g.setColor(Color.LIGHT_GRAY);
+		g.fillRect(i * DessinMonJeu.TAILLE_CASE, j * DessinMonJeu.TAILLE_CASE, DessinMonJeu.TAILLE_CASE,DessinMonJeu.TAILLE_CASE);
+	}
+	public void activer(MonJeu j){
+		for (Coordonnee attache : aact){
+			j.lCase[attache.x][attache.y]= new CaseVide();
+		}
+	}
+}
