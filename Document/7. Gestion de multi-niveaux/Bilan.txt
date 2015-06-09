@@ -1,0 +1,17 @@
+décrit l'état de l'application et les difficultés rencontrées:
+
+Etat de l'application : 
+
+
+-> Lorsque le personnage  va sur l’escalier, il change de niveau.
+-> Les monstres peuvent traverser la case
+-> Le monstre ou le personnage attaquer perd des points de vie
+-> L'attaque ne fonctionne pas s'ils ne sont pas situés l'un à côté de l'autre
+-> Les monstres du niveau où le héros se trouvait avant l'escalier n'apparaissent pas dans l'étage supérieur/inférieur. Ils restent à leur position et conservent leur points de vie.
+-> De nouveaux monstres peuvent être présents à l'étage sup rieur en fonction du descriptif du niveau.
+-> Le Héros arrive aux mêmes coordonnées dans l'étage supérieur/inférieur après
+avoir emprunté les escaliers.
+-> Les escaliers sont empruntables dans les deux sens : un escalier qui monte vers un étage possède un escalier qui descend à la même position dans l'étage supérieur (et inversement)
+-> L’escalier qui monte amène à un niveau plus dur et l’escalier qui descend amène à un niveau plus facile
+
+pas de tests parce qu'il s'agit de chargements de fichiers
