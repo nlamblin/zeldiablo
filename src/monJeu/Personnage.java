@@ -34,6 +34,10 @@ public class Personnage extends Entite{
 			imageHaut=ImageIO.read(new File("../coo_zeldiablo_ferry75u_thenot5u_meurant1u_lamblin4u/src/image/PersoHaut.png"));
 			imageDroite=ImageIO.read(new File("../coo_zeldiablo_ferry75u_thenot5u_meurant1u_lamblin4u/src/image/PersoDroite.png"));
 			imageBas=ImageIO.read(new File("../coo_zeldiablo_ferry75u_thenot5u_meurant1u_lamblin4u/src/image/PersoBas.png"));
+			imageHautAtt=ImageIO.read(new File("../coo_zeldiablo_ferry75u_thenot5u_meurant1u_lamblin4u/src/image/PersoHautAtt.png"));
+			imageBasAtt=ImageIO.read(new File("../coo_zeldiablo_ferry75u_thenot5u_meurant1u_lamblin4u/src/image/PersoBasAtt.png"));
+			imageGaucheAtt=ImageIO.read(new File("../coo_zeldiablo_ferry75u_thenot5u_meurant1u_lamblin4u/src/image/PersoGaucheAtt.png"));
+			imageDroiteAtt=ImageIO.read(new File("../coo_zeldiablo_ferry75u_thenot5u_meurant1u_lamblin4u/src/image/PersoDroiteAtt.png"));
 			image = imageBas;
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
@@ -123,24 +127,32 @@ public class Personnage extends Entite{
 	
 	public void attaquer(Entite e){
 		//if ((this.x ==e.getX()+1 || this.x ==e.getX()-1) && (this.y ==e.getY()+1 || this.y ==e.getY()-1)){
-		switch(orientation) {
-		case Entite.haut:
-			if(this.x == e.getX() && this.y == e.getY()-1)
-				e.subirDegats(this.getDegats());
+			switch(orientation) {
+			case Entite.haut:
+				if(this.x == e.getX() && this.y == e.getY()-1) {
+					e.subirDegats(this.getDegats());
+					etatAttaque = true;
+				}
+					break;
+			case Entite.bas:
+				if(this.x == e.getX() && this.y == e.getY()+1) {
+					e.subirDegats(this.getDegats());
+					etatAttaque = true;
+				}
 				break;
-		case Entite.bas:
-			if(this.x == e.getX() && this.y == e.getY()+1)
-				e.subirDegats(this.getDegats());
-			break;
-		case Entite.gauche:
-			if(this.x == e.getX()-1 && this.y == e.getY())
-				e.subirDegats(this.getDegats());
-			break;
-		case Entite.droite:
-			if(this.x == e.getX()+1 && this.y == e.getY())
-				e.subirDegats(this.getDegats());
-			break;
-		}
+			case Entite.gauche:
+				if(this.x == e.getX()-1 && this.y == e.getY()) {
+					e.subirDegats(this.getDegats());
+					etatAttaque = true;
+				}
+				break;
+			case Entite.droite:
+				if(this.x == e.getX()+1 && this.y == e.getY()) {
+					e.subirDegats(this.getDegats());
+					etatAttaque = true;
+				}
+				break;
+			}
 		//}
 	}
 

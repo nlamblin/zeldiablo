@@ -13,26 +13,35 @@ public abstract class Monstre extends Entite{
 		return super.toString();
 	}
 	
-	public void attaquer(){
+	public void attaquer() {
 		switch(orientation) {
 		case Entite.haut:
-			if(this.x == j.pj.getX() && this.y-1 == j.pj.getY())
+			if(this.x == j.pj.getX() && this.y-1 == j.pj.getY()){
 				j.pj.subirDegats(this.getDegats());
+				etatAttaque = true;
+			}
 			break;
 		case Entite.bas:
-			if(this.x == j.pj.getX() && this.y+1 == j.pj.getY())
+			if(this.x == j.pj.getX() && this.y+1 == j.pj.getY()) {
 				j.pj.subirDegats(this.getDegats());
+				etatAttaque = true;
+			}
 			break;
 		case Entite.gauche:
-			if(this.x-1 == j.pj.getX() && this.y == j.pj.getY())
+			if(this.x-1 == j.pj.getX() && this.y == j.pj.getY()) {
 				j.pj.subirDegats(this.getDegats());
+				etatAttaque = true;
+			}
 			break;
 		case Entite.droite:
-			if(this.x+1 == j.pj.getX() && this.y == j.pj.getY())
+			if(this.x+1 == j.pj.getX() && this.y == j.pj.getY()) {
 				j.pj.subirDegats(this.getDegats());
+				etatAttaque = true;
+			}
 			break;
 		}
 	}
+	
 	public void afficher(Graphics2D g) {
 		super.afficher(g);
 	}
