@@ -40,6 +40,7 @@ public class Personnage extends Entite{
 			e.printStackTrace();
 		}
 		pv = 10;
+		pvMax = 10;
 	}
 
 	/**
@@ -64,11 +65,11 @@ public class Personnage extends Entite{
 
 	@Override
 	public void afficher(Graphics2D g) {
-		// TODO Auto-generated method stub
+		super.afficher(g);
 		g.setColor(Color.blue);
 		if (image ==null)g.fillOval(x * DessinMonJeu.TAILLE_CASE, y * DessinMonJeu.TAILLE_CASE, DessinMonJeu.TAILLE_CASE,DessinMonJeu.TAILLE_CASE);
 		else g.drawImage(image, null, x * DessinMonJeu.TAILLE_CASE, y * DessinMonJeu.TAILLE_CASE);
-		if (talisman)g.fillOval(x * DessinMonJeu.TAILLE_CASE, y * DessinMonJeu.TAILLE_CASE,5,5);
+		if (talisman)g.fillOval(x * DessinMonJeu.TAILLE_CASE, y * DessinMonJeu.TAILLE_CASE-5,5,5);
 	}
 	@Override
 	public void seDeplacer(Commande c){

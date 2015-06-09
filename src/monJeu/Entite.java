@@ -1,5 +1,6 @@
 package monJeu;
 
+import java.awt.Color;
 import java.awt.Graphics2D;
 import java.awt.image.BufferedImage;
 import java.io.File;
@@ -13,6 +14,7 @@ import moteurJeu.Commande;
 public abstract class Entite {
 	protected int x,y;
 	protected int pv;
+	protected int pvMax;
 	protected int degats;
 	final static int LIMIT_X = 15;
 	final static int LIMIT_Y = 15;
@@ -167,7 +169,11 @@ public abstract class Entite {
 		return(x+";"+y);
 	}
 	public abstract Commande IACommande();
-	public abstract void afficher(Graphics2D g);
+	public void afficher(Graphics2D g){
+		Color c = new Color((int)((1-(double)pv/(double)pvMax)*255.0),(int)(((double)pv/(double)pvMax)*255.0),0);
+		g.setColor(Color.GREEN);
+		g.fillRect(x * DessinMonJeu.TAILLE_CASE, y * DessinMonJeu.TAILLE_CASE,2,DessinMonJeu.TAILLE_CASE);
+	}
 	public boolean etreMort(){
 		return pv <=0;
 	}
