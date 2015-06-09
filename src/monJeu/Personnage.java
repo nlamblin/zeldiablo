@@ -127,7 +127,7 @@ public class Personnage extends Entite{
 		case Entite.haut:
 			if(this.x == e.getX() && this.y == e.getY()-1)
 				e.subirDegats(this.getDegats());
-			break;
+				break;
 		case Entite.bas:
 			if(this.x == e.getX() && this.y == e.getY()+1)
 				e.subirDegats(this.getDegats());
