@@ -15,6 +15,7 @@ public class Fantome extends Monstre{
 		super(xParam, yParam,jeu);
 		pv = 2;
 		pvMax = 2;
+		degats=1;
 		try {
 			imageHaut=ImageIO.read(new File("../coo_zeldiablo_ferry75u_thenot5u_meurant1u_lamblin4u/src/image/FantomeHaut.png"));
 			imageBas=ImageIO.read(new File("../coo_zeldiablo_ferry75u_thenot5u_meurant1u_lamblin4u/src/image/FantomeBas.png"));
@@ -166,11 +167,11 @@ public class Fantome extends Monstre{
 	}
 
 	public int getPv(){
-		return pv =5;
+		return pv;
 	}
 	
 	public int getDegats(){
-		return degats=1;
+		return degats;
 	}
 	
 
