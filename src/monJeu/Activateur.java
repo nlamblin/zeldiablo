@@ -4,18 +4,13 @@ import java.awt.Color;
 import java.awt.Graphics2D;
 import java.util.ArrayList;
 
-public class Activateur implements Case {
+public class Activateur extends Case {
 	private ArrayList<Coordonnee> aact;
 	public Activateur(){
 		aact = new ArrayList<Coordonnee>();
 	}
 	public void attacher(Coordonnee c){
 		aact.add(c);
-	}
-	@Override
-	public boolean etreTraversable() {
-		// TODO Auto-generated method stub
-		return true;
 	}
 
 	@Override
@@ -28,4 +23,11 @@ public class Activateur implements Case {
 			j.lCase[attache.x][attache.y]= new CaseVide();
 		}
 	}
+
+	@Override
+	public void effetCase() {
+		// TODO Auto-generated method stub
+		
+	}
+
 }
