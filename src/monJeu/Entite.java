@@ -148,6 +148,7 @@ public abstract class Entite {
 	public String toString(){
 		return(x+";"+y);
 	}
+	public abstract Commande IACommande();
 	public abstract void afficher(Graphics2D g);
 	public boolean etreMort(){
 		return pv <=0;

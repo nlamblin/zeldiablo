@@ -15,6 +15,7 @@ public class MonJeu implements Jeu {
 	/**
 	 * le personnage du jeu
 	 */
+	private boolean fini;
 	public Personnage pj;
 	public Case[][] lCase;
 	public ArrayList<Entite> lEntite;
@@ -22,6 +23,7 @@ public class MonJeu implements Jeu {
 	 * constructeur de jeu avec un Personnage
 	 */
 	public MonJeu(Case[][] lC) {
+		fini = false;
 		lEntite = new ArrayList<Entite>();
 		lCase = lC;
 		int i = 0;
@@ -51,61 +53,26 @@ public class MonJeu implements Jeu {
 	 *            chaine qui donne ordre
 	 */
 	public void evoluer(Commande commande) {
-		this.getPj().seDeplacer(commande);
-		getPj().changerImage(commande);
-		try{
-			Thread.sleep(100);
-		}
-		catch(Exception e){}
-		for (Entite e : lEntite){
-			evoluerEntite(e);
+		if (!etreFini()){
+			this.getPj().seDeplacer(commande);
+			getPj().changerImage(commande);
+			try{
+				Thread.sleep(100);
+			}
+			catch(Exception e){}
+			for (Entite e : lEntite){
+				evoluerEntite(e);
+			}
 		}
 	}
 
 	@Override
 	public boolean etreFini() {
 		// le jeu n'est jamais fini
-		return false;
+		return fini;
 	}
 	public void evoluerEntite(Entite e){
-		Commande c = new Commande();
-		int deplacement=-1;
-		
-		if (e.x < pj.x+3 && e.x > pj.x-3 && e.y < pj.y+3 && e.y > pj.y -3){
-			if(e.x >= pj.x && e.y >= pj.y){
-				if (e.x-pj.x >= e.y-pj.y)deplacement = Entite.gauche;
-				else deplacement = Entite.haut;
-			}
-			if (e.x >= pj.x && e.y < pj.y){
-				if (e.x-pj.x > pj.y-e.y)deplacement = Entite.gauche;
-				else deplacement = Entite.bas;
-			}
-			if (e.x < pj.x && e.y >= pj.y){
-				if (pj.x-e.x > e.y-pj.y)deplacement = Entite.droite;
-				else deplacement = Entite.haut;
-			}
-			if (e.x < pj.x && e.y < pj.y){
-				if (pj.x-e.x > pj.y-e.y)deplacement = Entite.droite;
-				else deplacement = Entite.bas;
-			}
-		}
-		else{
-			deplacement = (int)(Math.random()*10);
-		}
-		switch (deplacement){
-		case Entite.gauche:
-			c.gauche = true;
-			break;
-		case Entite.droite:
-			c.droite = true;
-			break;
-		case Entite.haut:
-			c.haut = true;
-			break;
-		case Entite.bas:
-			c.bas = true;
-			break;
-		}
+		Commande c = e.IACommande();
 		e.seDeplacer(c);
 		e.changerImage(c);
 	}
@@ -119,5 +86,8 @@ public class MonJeu implements Jeu {
 	}
 	public void setMonstres(ArrayList<Entite> le){
 		lEntite = le;
+	}
+	public void seFinir(){
+		fini = true;
 	}
 }
