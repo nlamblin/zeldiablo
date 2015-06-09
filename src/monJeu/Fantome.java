@@ -164,4 +164,11 @@ public class Fantome extends Monstre{
 		return c;
 	}
 
+	public int getPv(){
+		return pv =5;
+	}
+	
+	public int getDegats(){
+		return degats=1;
+	}
 }

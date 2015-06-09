@@ -32,7 +32,7 @@ public class TestsTalisman {
 		
 		p.seDeplacer(c);
 		
-		assertEquals("Le joueur aurait du prendre le talisman", true, p.getTalismant());
+		assertEquals("Le joueur aurait du prendre le talisman", true, p.getTalisman());
 	}
 	
 	@Test
