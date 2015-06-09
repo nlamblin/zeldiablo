@@ -13,19 +13,19 @@ public abstract class Monstre extends Entite{
 	
 	public void attaquer(){
 		switch(orientation) {
-		case "haut":
+		case Entite.haut:
 			if(this.x == j.pj.getX() && this.y == j.pj.getY()-1)
 				j.pj.subirDegats(this.getDegats());
 			break;
-		case "bas":
+		case Entite.bas:
 			if(this.x == j.pj.getX() && this.y == j.pj.getY()+1)
 				j.pj.subirDegats(this.getDegats());
 			break;
-		case "gauche":
+		case Entite.gauche:
 			if(this.x == j.pj.getX()-1 && this.y == j.pj.getY())
 				j.pj.subirDegats(this.getDegats());
 			break;
-		case "droite":
+		case Entite.droite:
 			if(this.x == j.pj.getX()+1 && this.y == j.pj.getY())
 				j.pj.subirDegats(this.getDegats());
 			break;

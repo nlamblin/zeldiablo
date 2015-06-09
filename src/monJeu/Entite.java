@@ -23,7 +23,7 @@ public abstract class Entite {
 	protected BufferedImage imageBas;
 	protected BufferedImage imageGauche;
 	protected BufferedImage imageDroite;
-	protected String orientation;
+	protected int orientation;
 	
 	public Entite(int xParam, int yParam,MonJeu jeu) {
 		j = jeu;
@@ -33,19 +33,19 @@ public abstract class Entite {
 	public void changerImage(Commande c){
 		if (c.bas){
 			image = imageBas;
-			orientation = "bas";
+			orientation = Entite.bas;
 		}
 		if (c.haut){
 			image = imageHaut;
-			orientation = "haut";
+			orientation = Entite.haut;
 		}
 		if (c.gauche){
 			image = imageGauche;
-			orientation = "gauche";
+			orientation = Entite.gauche;
 		}
 		if (c.droite){
 			image = imageDroite;
-			orientation = "droite";
+			orientation = Entite.droite;
 		}
 	}
 	public int getX(){

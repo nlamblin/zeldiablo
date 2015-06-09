@@ -27,7 +27,9 @@ public class Personnage extends Entite{
 	public Personnage(int xParam, int yParam,MonJeu jeu) {
 		super(xParam, yParam,jeu);
 		talisman = false;
+		
 		try {
+			orientation = Entite.bas;
 			imageGauche=ImageIO.read(new File("../coo_zeldiablo_ferry75u_thenot5u_meurant1u_lamblin4u/src/image/PersoGauche.png"));
 			imageHaut=ImageIO.read(new File("../coo_zeldiablo_ferry75u_thenot5u_meurant1u_lamblin4u/src/image/PersoHaut.png"));
 			imageDroite=ImageIO.read(new File("../coo_zeldiablo_ferry75u_thenot5u_meurant1u_lamblin4u/src/image/PersoDroite.png"));
@@ -101,19 +103,19 @@ public class Personnage extends Entite{
 	public void attaquer(Entite e){
 		//if ((this.x ==e.getX()+1 || this.x ==e.getX()-1) && (this.y ==e.getY()+1 || this.y ==e.getY()-1)){
 		switch(orientation) {
-		case "haut":
+		case Entite.haut:
 			if(this.x == e.getX() && this.y == e.getY()-1)
 				e.subirDegats(this.getDegats());
 			break;
-		case "bas":
+		case Entite.bas:
 			if(this.x == e.getX() && this.y == e.getY()+1)
 				e.subirDegats(this.getDegats());
 			break;
-		case "gauche":
+		case Entite.gauche:
 			if(this.x == e.getX()-1 && this.y == e.getY())
 				e.subirDegats(this.getDegats());
 			break;
-		case "droite":
+		case Entite.droite:
 			if(this.x == e.getX()+1 && this.y == e.getY())
 				e.subirDegats(this.getDegats());
 			break;
