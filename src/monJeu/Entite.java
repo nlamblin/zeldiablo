@@ -60,7 +60,6 @@ public abstract class Entite {
 
 	public void setDegats(int deg){
 		this.degats = deg;
-
 	}
 
 	public void setPv(int pv1){
