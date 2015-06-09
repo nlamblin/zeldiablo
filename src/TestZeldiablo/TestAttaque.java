@@ -14,11 +14,6 @@ import org.junit.Test;
 
 public class TestAttaque {
 
-	@Ignore
-	public void test() {
-		fail("Not yet implemented");
-	}
-	
 	@Test
 	public void testAttaqueBonnePorteeOrcVersPersonnage() {
 		Case [][] lc =new Case[16][16];

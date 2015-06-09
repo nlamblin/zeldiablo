@@ -50,7 +50,7 @@ public abstract class Entite {
 		return this.y;
 	}
 
-	public int getXPv(){
+	public int getPv(){
 		return this.pv;
 	}
 
@@ -59,16 +59,16 @@ public abstract class Entite {
 	}
 
 	public void setDegats(int deg){
-		this.degats += deg;
+		this.degats = deg;
 
 	}
 
 	public void setPv(int pv1){
-		this.pv += pv1;
+		this.pv = pv1;
 	}
 	
 	public void subirDegats(int i){
-		this.setPv(-i);
+		this.setPv(this.getPv()-i);
 	}
 
 	public void seDeplacer(Commande c) {
