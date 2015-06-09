@@ -56,10 +56,6 @@ public class MonJeu implements Jeu {
 		if (!etreFini()){
 			this.getPj().seDeplacer(commande);
 			getPj().changerImage(commande);
-			try{
-				Thread.sleep(100);
-			}
-			catch(Exception e){}
 			for (Entite e : lEntite){
 				evoluerEntite(e);
 			}

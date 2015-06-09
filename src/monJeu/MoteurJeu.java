@@ -12,13 +12,15 @@ public class MoteurJeu {
 	private ArrayList<Entite> lEntite;
 	private Case[][] lCases;
 	private Personnage personnage;
-	
+	private static Activateur act;
+	private static ArrayList<Coordonnee> aact;
 	public MoteurJeu(){
 		jeu = new MonJeu(MoteurJeu.chargerLabyrinthe("../coo_zeldiablo_ferry75u_thenot5u_meurant1u_lamblin4u/Labyrinthe0.txt"));
 		lEntite = new ArrayList<Entite>();
 		personnage = new Personnage(0,0,jeu);
 	}
 	public static Case[][] chargerLabyrinthe(String fileName){
+		aact = new ArrayList<Coordonnee>();
 		Case[][] lC = new Case[16][16];
 		try {
 			BufferedReader br = new BufferedReader(new FileReader(fileName));
@@ -38,10 +40,27 @@ public class MoteurJeu {
 					case 'T':
 						lC[i][j]=new Talisman();
 						break;
+					case 'U':
+						lC[i][j]=new EscalierUp();
+						break;
+					case 'D':
+						lC[i][j]=new EscalierDown();
+						break;
+					case 'A':
+						lC[i][j]=new Activateur();
+						act = (Activateur) lC[i][j];
+						break;
+					case 'S':
+						lC[i][j]=new Mur();
+						aact.add(new Coordonnee(i,j));
 					}
 				}
 			}
-			
+			if (act != null){
+				for (Coordonnee a: aact){
+					act.attacher(a);
+				}
+			}
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
 		} catch (IOException e) {
