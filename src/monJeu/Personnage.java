@@ -96,7 +96,7 @@ public class Personnage extends Entite{
 	}
 	
 	public void attaquer(Entite e){
-		if ((this.x ==e.getX()+1 || this.x ==e.getX()-1) && (this.x ==e.getY()+1 || this.x ==e.getY()-1)){
+		if ((this.x ==e.getX()+1 || this.x ==e.getX()-1) && (this.y ==e.getY()+1 || this.y ==e.getY()-1)){
 			e.subirDegats(this.getDegats());
 		}
 	}
