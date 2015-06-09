@@ -3,13 +3,7 @@ package monJeu;
 import java.awt.Color;
 import java.awt.Graphics2D;
 import java.util.ArrayList;
-class Coordonnee{
-	public int x,y;
-	public Coordonnee(int x,int y){
-		this.x=x;
-		this.y=y;
-	}
-}
+
 public class Activateur implements Case {
 	private ArrayList<Coordonnee> aact;
 	public Activateur(){
