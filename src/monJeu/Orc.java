@@ -14,6 +14,7 @@ public class Orc extends Monstre{
 	public Orc(int xParam, int yParam,MonJeu jeu) {
 		super(xParam, yParam,jeu);
 		pv = 5;
+		pvMax = 5;
 		try {
 			imageHaut=ImageIO.read(new File("../coo_zeldiablo_ferry75u_thenot5u_meurant1u_lamblin4u/src/image/OrcHaut.png"));
 			imageBas=ImageIO.read(new File("../coo_zeldiablo_ferry75u_thenot5u_meurant1u_lamblin4u/src/image/OrcBas.png"));

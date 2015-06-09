@@ -1,0 +1,10 @@
+décrit l'état de l'application et les difficultés rencontrées:
+
+Etat de l'application : 
+
+
+->    Les cases avec effet sont des cases traversables.
+->    Lorsqu'un personnage marche sur cette case, elle déclenche immédiatement un effet
+->    Lorsque les monstres marche sur cette case, aucun effet se déclenche
+
+
