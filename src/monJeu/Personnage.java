@@ -17,13 +17,13 @@ import moteurJeu.Commande;
  * la classe correspondant au Personnage
  */
 public class Personnage extends Entite{
-	private boolean talisment;
+	private boolean talismant;
 	/**
 	 * constructeur vide
 	 */
 	public Personnage(int xParam, int yParam,MonJeu jeu) {
 		super(xParam, yParam,jeu);
-		talisment = false;
+		talismant = false;
 		try {
 			imageGauche=ImageIO.read(new File("../coo_zeldiablo_ferry75u_thenot5u_meurant1u_lamblin4u/src/image/PersoGauche.png"));
 			imageHaut=ImageIO.read(new File("../coo_zeldiablo_ferry75u_thenot5u_meurant1u_lamblin4u/src/image/PersoHaut.png"));
@@ -63,16 +63,16 @@ public class Personnage extends Entite{
 		g.setColor(Color.blue);
 		if (image ==null)g.fillOval(x * DessinMonJeu.TAILLE_CASE, y * DessinMonJeu.TAILLE_CASE, DessinMonJeu.TAILLE_CASE,DessinMonJeu.TAILLE_CASE);
 		else g.drawImage(image, null, x * DessinMonJeu.TAILLE_CASE, y * DessinMonJeu.TAILLE_CASE);
-		if (talisment)g.fillOval(x * DessinMonJeu.TAILLE_CASE, y * DessinMonJeu.TAILLE_CASE,5,5);
+		if (talismant)g.fillOval(x * DessinMonJeu.TAILLE_CASE, y * DessinMonJeu.TAILLE_CASE,5,5);
 	}
 	@Override
 	public void seDeplacer(Commande c){
 		super.seDeplacer(c);
 		if (j.lCase[y][x] instanceof Talisman){
-			talisment = true;
+			talismant = true;
 			j.lCase[y][x] = new CaseVide();
 		}
-		if (j.lCase[y][x] instanceof Entree && talisment){
+		if (j.lCase[y][x] instanceof Entree && talismant){
 			j.seFinir();
 		}
 	}
@@ -81,5 +81,9 @@ public class Personnage extends Entite{
 	public Commande IACommande() {
 		// TODO Auto-generated method stub
 		return new Commande();
+	}
+	
+	public boolean getTalismant() {
+		return talismant;
 	}
 }
