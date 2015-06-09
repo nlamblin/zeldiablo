@@ -13,6 +13,6 @@ public class Talisman extends Case{
 	@Override
 	public void effetCase() {
 		// TODO Auto-generated method stub
-		
+
 	}
 }
