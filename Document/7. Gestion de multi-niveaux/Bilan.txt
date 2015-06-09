@@ -14,4 +14,4 @@ avoir emprunté les escaliers.
 -> Les escaliers sont empruntables dans les deux sens : un escalier qui monte vers un étage possède un escalier qui descend à la même position dans l'étage supérieur (et inversement)
 -> L’escalier qui monte amène à un niveau plus dur et l’escalier qui descend amène à un niveau plus facile
 
-pas de tests parce qu'il s'agit de chargements de fichiers
+
