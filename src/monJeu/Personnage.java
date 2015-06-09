@@ -88,11 +88,11 @@ public class Personnage extends Entite{
 	}
 
 	public int getPv(){
-		return pv =10;
+		return pv;
 	}
 	
 	public int getDegats(){
-		return degats=1;
+		return degats;
 	}
 	
 	public void attaquer(Entite e){
