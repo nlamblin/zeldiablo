@@ -66,36 +66,41 @@ public class Personnage extends Entite{
 	@Override
 	public void afficher(Graphics2D g) {
 		super.afficher(g);
-		System.out.println(pv + "");
 		if (image ==null)g.fillOval(x * DessinMonJeu.TAILLE_CASE, y * DessinMonJeu.TAILLE_CASE, DessinMonJeu.TAILLE_CASE,DessinMonJeu.TAILLE_CASE);
 		else g.drawImage(image, null, x * DessinMonJeu.TAILLE_CASE, y * DessinMonJeu.TAILLE_CASE);
-		if (talisman)g.fillOval(x * DessinMonJeu.TAILLE_CASE, y * DessinMonJeu.TAILLE_CASE-5,5,5);
+		if (talisman){
+			g.setColor(Color.BLUE);
+			g.fillOval(x * DessinMonJeu.TAILLE_CASE, y * DessinMonJeu.TAILLE_CASE-5,5,5);
+		}
 	}
 	@Override
 	public void seDeplacer(Commande c){
-		super.seDeplacer(c);
-		if (j.lCase[y][x] instanceof Talisman){
-			talisman = true;
-			j.lCase[y][x] = new CaseVide();
+		if (!etreMort()){
+			super.seDeplacer(c);
+			if (j.lCase[y][x] instanceof Talisman){
+				talisman = true;
+				j.lCase[y][x] = new CaseVide();
+			}
+			if (j.lCase[y][x] instanceof Entree && talisman){
+				j.seFinir();
+			}
+			if (j.lCase[y][x] instanceof EscalierDown){
+				etage++;
+				j.lCase = MoteurJeu.chargerLabyrinthe("../coo_zeldiablo_ferry75u_thenot5u_meurant1u_lamblin4u/Labyrinthe"+etage+".txt");
+				j.lEntite = MoteurJeu.chargerMonstres("../coo_zeldiablo_ferry75u_thenot5u_meurant1u_lamblin4u/Monstres"+etage+".txt", j);
+				this.x = this.x+1;
+			}
+			if (j.lCase[y][x] instanceof EscalierUp){
+				etage--;
+				j.lCase = MoteurJeu.chargerLabyrinthe("../coo_zeldiablo_ferry75u_thenot5u_meurant1u_lamblin4u/Labyrinthe"+etage+".txt");
+				j.lEntite = MoteurJeu.chargerMonstres("../coo_zeldiablo_ferry75u_thenot5u_meurant1u_lamblin4u/Monstres"+etage+".txt", j);
+				this.x = this.x+1;
+			}
+			if (j.lCase[y][x] instanceof Activateur){
+				((Activateur)j.lCase[y][x]).activer(j);
+			}
 		}
-		if (j.lCase[y][x] instanceof Entree && talisman){
-			j.seFinir();
-		}
-		if (j.lCase[y][x] instanceof EscalierDown){
-			etage++;
-			j.lCase = MoteurJeu.chargerLabyrinthe("../coo_zeldiablo_ferry75u_thenot5u_meurant1u_lamblin4u/Labyrinthe"+etage+".txt");
-			j.lEntite = MoteurJeu.chargerMonstres("../coo_zeldiablo_ferry75u_thenot5u_meurant1u_lamblin4u/Monstres"+etage+".txt", j);
-			this.x = this.x+1;
-		}
-		if (j.lCase[y][x] instanceof EscalierUp){
-			etage--;
-			j.lCase = MoteurJeu.chargerLabyrinthe("../coo_zeldiablo_ferry75u_thenot5u_meurant1u_lamblin4u/Labyrinthe"+etage+".txt");
-			j.lEntite = MoteurJeu.chargerMonstres("../coo_zeldiablo_ferry75u_thenot5u_meurant1u_lamblin4u/Monstres"+etage+".txt", j);
-			this.x = this.x+1;
-		}
-		if (j.lCase[y][x] instanceof Activateur){
-			((Activateur)j.lCase[y][x]).activer(j);
-		}
+		else j.seFinir();
 	}
 
 	@Override

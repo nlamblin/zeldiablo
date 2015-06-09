@@ -33,7 +33,7 @@ public class Orc extends Monstre{
 
 	@Override
 	public void afficher(Graphics2D g) {
-		// TODO Auto-generated method stub
+		super.afficher(g);
 		g.setColor(Color.WHITE);
 		if (image ==null)g.fillOval(x * DessinMonJeu.TAILLE_CASE, y * DessinMonJeu.TAILLE_CASE, DessinMonJeu.TAILLE_CASE,DessinMonJeu.TAILLE_CASE);
 		else g.drawImage(image, null, x * DessinMonJeu.TAILLE_CASE, y * DessinMonJeu.TAILLE_CASE);

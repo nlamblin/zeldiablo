@@ -180,7 +180,7 @@ public abstract class Entite {
 	public void afficher(Graphics2D g){
 		if (pv>=0)g.setColor(new Color((int)((1-(double)pv/(double)pvMax)*255.0),(int)(((double)pv/(double)pvMax)*255.0),0));
 		else g.setColor(Color.RED);
-		g.fillRect(x * DessinMonJeu.TAILLE_CASE, y * DessinMonJeu.TAILLE_CASE,2,DessinMonJeu.TAILLE_CASE);
+		g.fillRect(x * DessinMonJeu.TAILLE_CASE, y * DessinMonJeu.TAILLE_CASE,2,(int)(DessinMonJeu.TAILLE_CASE*(double)pv/(double)pvMax));
 	}
 	public boolean etreMort(){
 		return pv <=0;

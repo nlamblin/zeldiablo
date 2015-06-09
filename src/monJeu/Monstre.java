@@ -1,5 +1,7 @@
 package monJeu;
 
+import java.awt.Graphics2D;
+
 public abstract class Monstre extends Entite{
 
 	public Monstre(int xParam, int yParam,MonJeu jeu) {
@@ -30,5 +32,8 @@ public abstract class Monstre extends Entite{
 				j.pj.subirDegats(this.getDegats());
 			break;
 		}
+	}
+	public void afficher(Graphics2D g) {
+		super.afficher(g);
 	}
 }
