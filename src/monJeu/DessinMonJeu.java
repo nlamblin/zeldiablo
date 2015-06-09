@@ -70,7 +70,7 @@ public class DessinMonJeu implements DessinJeu {
 	}
 	private void dessinerFin(BufferedImage im){
 		Graphics2D crayon = (Graphics2D) im.getGraphics();
-		crayon.setFont(new Font(Font.SERIF,Font.PLAIN,100));
+		crayon.setFont(new Font(Font.SERIF,Font.PLAIN,80));
 		crayon.setColor(Color.RED);
 		crayon.drawString("Game over !",0,200);
 	}
