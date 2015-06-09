@@ -13,6 +13,7 @@ import moteurJeu.Commande;
 public abstract class Entite {
 	protected int x,y;
 	protected int pv;
+	protected int degats;
 	final static int LIMIT_X = 15;
 	final static int LIMIT_Y = 15;
 	public final static int gauche = 0, haut = 1, droite = 2, bas = 3;
@@ -49,13 +50,21 @@ public abstract class Entite {
 		return this.y;
 	}
 
-	public void setX(int x1){
-		this.x += x1;
+	public int getXPv(){
+		return this.pv;
+	}
+
+	public  int getDegats(){
+		return this.degats;
+	}
+
+	public void setDegats(int deg){
+		this.degats += deg;
 
 	}
 
-	public void setY(int y1){
-		this.y += y1;
+	public void setPv(int pv1){
+		this.pv += pv1;
 	}
 
 	public void seDeplacer(Commande c) {
