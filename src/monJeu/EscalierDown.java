@@ -10,5 +10,11 @@ public class EscalierDown extends Escalier {
 		g.setColor(Color.CYAN);
 		g.fillRect(i * DessinMonJeu.TAILLE_CASE, j * DessinMonJeu.TAILLE_CASE, DessinMonJeu.TAILLE_CASE,DessinMonJeu.TAILLE_CASE);
 	}
+	
+	@Override
+	public void effetCase() {
+		// TODO Auto-generated method stub
+		
+	}
 
 }
