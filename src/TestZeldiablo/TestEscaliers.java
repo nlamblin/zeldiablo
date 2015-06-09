@@ -18,11 +18,6 @@ import org.junit.Ignore;
 import org.junit.Test;
 
 public class TestEscaliers {
-
-	@Ignore
-	public void test() {
-		fail("Not yet implemented");
-	}
 	
 	@Test
 	public void testMonstreVeutMonter() {
@@ -39,8 +34,8 @@ public class TestEscaliers {
 		c.droite = true;
 		o.seDeplacer(c);
 		
-		assertEquals("La position X du monstre ne devrait pas avoir changer", o.getX(), 10);
-		assertEquals("La position Y du monstre ne devrait pas avoir changer", o.getY(), 10);
+		assertEquals("La position X du monstre ne devrait pas avoir changée", o.getX(), 10);
+		assertEquals("La position Y du monstre ne devrait pas avoir changée", o.getY(), 10);
 	}
 	
 	@Test
@@ -58,8 +53,8 @@ public class TestEscaliers {
 		c.droite = true;
 		o.seDeplacer(c);
 		
-		assertEquals("La position X du monstre ne devrait pas avoir changer", o.getX(), 10);
-		assertEquals("La position Y du monstre ne devrait pas avoir changer", o.getY(), 10);
+		assertEquals("La position X du monstre ne devrait pas avoir changée", o.getX(), 10);
+		assertEquals("La position Y du monstre ne devrait pas avoir changée", o.getY(), 10);
 	}
 	
 	@Test
@@ -77,8 +72,8 @@ public class TestEscaliers {
 		c.droite = true;
 		p.seDeplacer(c);
 		
-		assertEquals("La position X du personnage devrait avoir changer (+1)", p.getX(), 11);
-		assertEquals("La position Y du personnage ne pas devrait avoir changer", p.getY(), 10);
+		assertEquals("La position X du personnage devrait avoir changée (+1)", p.getX(), 11);
+		assertEquals("La position Y du personnage ne pas devrait avoir changée", p.getY(), 10);
 	}
 
 }
