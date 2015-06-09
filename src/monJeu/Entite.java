@@ -66,6 +66,10 @@ public abstract class Entite {
 	public void setPv(int pv1){
 		this.pv += pv1;
 	}
+	
+	public void subirDegats(int i){
+		this.setPv(-i);
+	}
 
 	public void seDeplacer(Commande c) {
 		
