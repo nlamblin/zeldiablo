@@ -1,0 +1,12 @@
+décrit l'état de l'application et les difficultés rencontrées:
+
+Etat de l'application : 
+
+->   Le monstre attaque le personnage lorsqu'il est situé à côté
+->   Le personnage attaque un monstre qui est situé à côté de lui
+->   Le monstre ou le personnage attaquer perd des points de vie
+->   L'attaque ne fonctionne pas s'ils ne sont pas situés l'un à côté de l'autre
+
+Difficultées rencontrées:
+
+/
