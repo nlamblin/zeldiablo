@@ -66,7 +66,7 @@ public class Personnage extends Entite{
 	@Override
 	public void afficher(Graphics2D g) {
 		super.afficher(g);
-		g.setColor(Color.blue);
+		System.out.println(pv + "");
 		if (image ==null)g.fillOval(x * DessinMonJeu.TAILLE_CASE, y * DessinMonJeu.TAILLE_CASE, DessinMonJeu.TAILLE_CASE,DessinMonJeu.TAILLE_CASE);
 		else g.drawImage(image, null, x * DessinMonJeu.TAILLE_CASE, y * DessinMonJeu.TAILLE_CASE);
 		if (talisman)g.fillOval(x * DessinMonJeu.TAILLE_CASE, y * DessinMonJeu.TAILLE_CASE-5,5,5);
@@ -137,6 +137,12 @@ public class Personnage extends Entite{
 			break;
 		}
 		//}
+	}
+
+	@Override
+	public void attaquer() {
+		// TODO Auto-generated method stub
+		
 	}
 	
 }

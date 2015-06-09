@@ -71,6 +71,7 @@ public class MonJeu implements Jeu {
 		Commande c = e.IACommande();
 		e.seDeplacer(c);
 		e.changerImage(c);
+		e.attaquer();
 	}
 	/**
 	 * getter pour l'affichage

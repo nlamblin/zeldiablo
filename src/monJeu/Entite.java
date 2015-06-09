@@ -170,11 +170,12 @@ public abstract class Entite {
 	}
 	public abstract Commande IACommande();
 	public void afficher(Graphics2D g){
-		Color c = new Color((int)((1-(double)pv/(double)pvMax)*255.0),(int)(((double)pv/(double)pvMax)*255.0),0);
-		g.setColor(Color.GREEN);
+		if (pv>=0)g.setColor(new Color((int)((1-(double)pv/(double)pvMax)*255.0),(int)(((double)pv/(double)pvMax)*255.0),0));
+		else g.setColor(Color.RED);
 		g.fillRect(x * DessinMonJeu.TAILLE_CASE, y * DessinMonJeu.TAILLE_CASE,2,DessinMonJeu.TAILLE_CASE);
 	}
 	public boolean etreMort(){
 		return pv <=0;
 	}
+	public abstract void attaquer();
 }
