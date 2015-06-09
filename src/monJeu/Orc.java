@@ -86,12 +86,5 @@ public class Orc extends Monstre{
 	public int getDegats(){
 		return degats=1;
 	}
-
-	public void attaquer(){
-		// TODO 
-	}
 	
-	public void subirDegats(int i){
-		// TODO
-	}
 }

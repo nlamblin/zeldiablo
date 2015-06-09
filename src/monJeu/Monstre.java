@@ -10,4 +10,10 @@ public abstract class Monstre extends Entite{
 	public String toString() {
 		return super.toString();
 	}
+	
+	public void attaquer(){
+		if ((this.x == j.pj.x+1 || this.x == j.pj.x-1) && (this.x == j.pj.x+1 || this.x == j.pj.x-1)){
+			j.pj.subirDegats(this.getDegats());
+		}
+	}
 }

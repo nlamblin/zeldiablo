@@ -172,12 +172,5 @@ public class Fantome extends Monstre{
 		return degats=1;
 	}
 	
-	public void attaquer(){
-		// TODO 
-	}
-	
-	public void subirDegats(int i){
-		// TODO
-	}
-	
+
 }
