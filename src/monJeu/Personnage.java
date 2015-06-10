@@ -134,7 +134,7 @@ public class Personnage extends Entite{
 					e.subirDegats(this.getDegats());
 					etatAttaque = true;
 				}
-					break;
+				break;
 			case Entite.bas:
 				if(this.x == e.getX() && this.y+1 == e.getY()) {
 					e.subirDegats(this.getDegats());

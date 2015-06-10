@@ -41,24 +41,26 @@ public abstract class Entite {
 	
 	public void changerImage(Commande c){
 		if (c.bas){
-			if(etatAttaque) image = imageBasAtt;
-			else image = imageBas;
+			image = imageBas;
 			orientation = Entite.bas;
 		}
 		if (c.haut){
-			if(etatAttaque) image = imageHautAtt;
-			else image = imageHaut;
+			image = imageHaut;
 			orientation = Entite.haut;
 		}
 		if (c.gauche){
-			if(etatAttaque) image = imageGaucheAtt;
-			else image = imageGauche;
+			image = imageGauche;
 			orientation = Entite.gauche;
 		}
 		if (c.droite){
-			if(etatAttaque) image = imageDroiteAtt;
-			else image = imageDroite;
+			image = imageDroite;
 			orientation = Entite.droite;
+		}
+		if(c.attaque) {
+			if(orientation == Entite.droite) image = imageDroiteAtt;
+			if(orientation == Entite.gauche) image = imageGaucheAtt;
+			if(orientation == Entite.bas) image = imageBasAtt;
+			if(orientation == Entite.haut) image = imageHautAtt;
 		}
 	}
 	public int getX(){
