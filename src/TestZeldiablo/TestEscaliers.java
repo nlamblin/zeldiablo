@@ -72,7 +72,7 @@ public class TestEscaliers {
 		c.droite = true;
 		p.seDeplacer(c);
 		assertEquals("La position Y du personnage ne pas devrait avoir changée", p.getY(), 10);
-		assertEquals("La position X du personnage devrait avoir changée (+1)", p.getX(), 11);
+		assertEquals("La position X du personnage devrait avoir changée (+1)", p.getX(), 10);
 	}
 
 }
