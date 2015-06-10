@@ -81,14 +81,18 @@ public class Personnage extends Entite{
 	public void seDeplacer(Commande c){
 		if (!etreMort()){
 			super.seDeplacer(c);
-			if (j.lCase[y][x] instanceof Talisman){
-				
+			for (int i = 0;i< 16;i++){
+				for (int j1=0;j1< 16;j1++)
+				j.lCase[i][j1].champ = false;
 			}
-			if (j.lCase[y][x] instanceof Entree && talisman){
-				
-			}
-			if (j.lCase[y][x] instanceof EscalierDown){
-				
+			for (int i = x-1;i<=x+1;i++){
+				if (i>=j.lCase.length)break;
+				if (i<0)i=0;
+				for (int j1=y-1;j1<=y+1;j1++){
+					if (j1>=j.lCase.length)break;
+					if (j1<0)j1=0;
+					j.lCase[j1][i].champ = true;
+				}
 			}
 			if (j.lCase[y][x] instanceof Declencheur){
 				((Declencheur)j.lCase[y][x]).effetCase(j);

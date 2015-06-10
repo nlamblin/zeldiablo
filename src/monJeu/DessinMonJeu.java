@@ -65,7 +65,9 @@ public class DessinMonJeu implements DessinJeu {
 	private void dessinerEntite(ArrayList<Entite> le,BufferedImage im){
 		Graphics2D crayon = (Graphics2D) im.getGraphics();
 		for (Entite e : le){
-			e.afficher(crayon);
+			if (jeu.lCase[e.y][e.x].champ){
+				e.afficher(crayon);
+			}
 		}
 	}
 	private void dessinerFin(BufferedImage im){
