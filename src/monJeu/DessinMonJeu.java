@@ -78,7 +78,7 @@ public class DessinMonJeu implements DessinJeu {
 		else {
 			crayon.setFont(new Font(Font.SERIF,Font.PLAIN,100));
 			crayon.setColor(Color.GREEN);
-			crayon.drawString("You win s!",0,200);
+			crayon.drawString("You win !",0,200);
 		}
 	}
 	/**
