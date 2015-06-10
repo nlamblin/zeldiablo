@@ -89,12 +89,6 @@ public abstract class Entite {
 		if(!etreMort()){
 			this.setPv(this.getPv()-i);
 		}
-		else {
-				j.lEntite.remove(this);
-		}
-		if(etreMort()){
-				j.lEntite.remove(this);
-		}
 	}
 
 	public void seDeplacer(Commande c) {

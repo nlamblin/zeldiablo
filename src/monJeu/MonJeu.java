@@ -56,9 +56,14 @@ public class MonJeu implements Jeu {
 		if (!etreFini()){
 			this.getPj().seDeplacer(commande);
 			if(commande.attaque) {
+				ArrayList<Entite> tmp = new ArrayList<Entite>();
 				for(Entite e : lEntite) {
 					getPj().attaquer(e);
+					if (!e.etreMort()){
+						tmp.add(e);
+					}
 				}
+				lEntite = tmp;
 			}
 			getPj().changerImage(commande);
 			for (Entite e : lEntite){

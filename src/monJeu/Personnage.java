@@ -45,6 +45,7 @@ public class Personnage extends Entite{
 		}
 		pv = 10;
 		pvMax = 10;
+		degats=2;
 	}
 
 	/**
@@ -129,25 +130,25 @@ public class Personnage extends Entite{
 		if(!etreMort()) {
 			switch(orientation) {
 			case Entite.haut:
-				if(this.x == e.getX() && this.y == e.getY()-1) {
+				if(this.x == e.getX() && this.y-1 == e.getY()) {
 					e.subirDegats(this.getDegats());
 					etatAttaque = true;
 				}
 					break;
 			case Entite.bas:
-				if(this.x == e.getX() && this.y == e.getY()+1) {
+				if(this.x == e.getX() && this.y+1 == e.getY()) {
 					e.subirDegats(this.getDegats());
 					etatAttaque = true;
 				}
 				break;
 			case Entite.gauche:
-				if(this.x == e.getX()-1 && this.y == e.getY()) {
+				if(this.x-1 == e.getX() && this.y == e.getY()) {
 					e.subirDegats(this.getDegats());
 					etatAttaque = true;
 				}
 				break;
 			case Entite.droite:
-				if(this.x == e.getX()+1 && this.y == e.getY()) {
+				if(this.x+1 == e.getX() && this.y == e.getY()) {
 					e.subirDegats(this.getDegats());
 					etatAttaque = true;
 				}
