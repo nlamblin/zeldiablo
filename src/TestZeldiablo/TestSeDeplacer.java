@@ -14,7 +14,7 @@ public class TestSeDeplacer {
 
 	@Test
 	public void testSeDelacerGauche() {
-		Case [][] lc =new Case[15][15];
+		Case [][] lc =new Case[16][16];
 		for (int i = 0;i<15;i++){
 			for (int j = 0;j<15;j++){
 				lc [i][j] = new CaseVide();
@@ -30,7 +30,7 @@ public class TestSeDeplacer {
 	
 	@Test
 	public void testSeDelacerHaut() {
-		Case [][] lc =new Case[15][15];
+		Case [][] lc =new Case[16][16];
 		for (int i = 0;i<15;i++){
 			for (int j = 0;j<15;j++){
 				lc [i][j] = new CaseVide();
@@ -46,7 +46,7 @@ public class TestSeDeplacer {
 	
 	@Test
 	public void testSeDelacerDroite() {
-		Case [][] lc =new Case[15][15];
+		Case [][] lc =new Case[16][16];
 		for (int i = 0;i<15;i++){
 			for (int j = 0;j<15;j++){
 				lc [i][j] = new CaseVide();
@@ -62,7 +62,7 @@ public class TestSeDeplacer {
 	
 	@Test
 	public void testSeDelacerBas() {
-		Case [][] lc =new Case[15][15];
+		Case [][] lc =new Case[16][16];
 		for (int i = 0;i<15;i++){
 			for (int j = 0;j<15;j++){
 				lc [i][j] = new CaseVide();
@@ -79,7 +79,7 @@ public class TestSeDeplacer {
 	
 	@Test
 	public void testSeDelacerErreur() {
-		Case [][] lc =new Case[15][15];
+		Case [][] lc =new Case[16][16];
 		for (int i = 0;i<15;i++){
 			for (int j = 0;j<15;j++){
 				lc [i][j] = new CaseVide();

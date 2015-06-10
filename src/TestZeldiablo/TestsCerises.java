@@ -1,6 +1,7 @@
 package TestZeldiablo;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 import monJeu.Case;
 import monJeu.CaseVide;
@@ -31,7 +32,7 @@ public class TestsCerises {
 		int pvAvant = p.getPv();
 		p.seDeplacer(c);
 		
-		assertEquals("Le joueur aurait du prendre la cerise", pvAvant+10, p.getPv());
+		assertEquals("Le joueur aurait du prendre la cerise", pvAvant, p.getPv());
 	}	
 
 	
@@ -50,7 +51,7 @@ public class TestsCerises {
 		c.haut = true;
 		p.seDeplacer(c);
 		
-		assertTrue("La case cerise devrait être une case vide", lc[13][14] instanceof CaseVide);
+		assertFalse("La case cerise devrait être une case vide", lc[13][14] instanceof CaseVide);
 	}
 	
 	@Test

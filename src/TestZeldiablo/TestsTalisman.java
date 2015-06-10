@@ -35,25 +35,6 @@ public class TestsTalisman {
 		assertEquals("Le joueur aurait du prendre le talisman", true, p.getTalisman());
 	}
 	
-	@Test
-	public void testPlusSurLePlateauApresRecuperation() {
-		Case [][] lc =new Case[16][16];
-		for (int i = 0;i<15;i++){
-			for (int j = 0;j<15;j++){
-				lc [i][j] = new CaseVide();
-			}
-		}
-		
-		lc[13][14] = new Talisman();
-		MonJeu mj = new MonJeu(lc);
-		Personnage p = new Personnage(14, 14, mj);
-		Commande c = new Commande();
-		c.haut = true;
-		
-		p.seDeplacer(c);
-		
-		assertTrue("La case talismant devrait être une case vide", lc[13][14] instanceof CaseVide);
-	}
 	
 	@Test
 	public void testMonstreRecupererPasTalisman() {
