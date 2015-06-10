@@ -55,6 +55,11 @@ public class MonJeu implements Jeu {
 	public void evoluer(Commande commande) {
 		if (!etreFini()){
 			this.getPj().seDeplacer(commande);
+			if(commande.attaque) {
+				for(Entite e : lEntite) {
+					getPj().attaquer(e);
+				}
+			}
 			getPj().changerImage(commande);
 			for (Entite e : lEntite){
 				evoluerEntite(e);

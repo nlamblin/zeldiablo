@@ -3,6 +3,8 @@ package moteurJeu;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 
+import com.sun.xml.internal.ws.api.pipe.ServerPipeAssemblerContext;
+
 /**
  * classe qui represente un controleur en lien avec un KeyListener
  * 
@@ -62,6 +64,11 @@ public class Controleur implements KeyListener {
 			this.commandeEnCours.bas = true;
 			break;
 		}
+		
+		switch(e.getKeyCode()) {
+		case KeyEvent.VK_SPACE :
+			this.commandeEnCours.attaque = true;
+		}
 
 	}
 
@@ -83,6 +90,11 @@ public class Controleur implements KeyListener {
 		case 's':
 			this.commandeEnCours.bas = false;
 			break;
+		}
+		
+		switch(e.getKeyCode()) {
+		case KeyEvent.VK_SPACE :
+			this.commandeEnCours.attaque = false;
 		}
 
 	}

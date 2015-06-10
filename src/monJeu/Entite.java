@@ -38,6 +38,7 @@ public abstract class Entite {
 		y = yParam;
 		etatAttaque = false;
 	}
+	
 	public void changerImage(Commande c){
 		if (c.bas){
 			if(etatAttaque == true) image = imageBasAtt;
