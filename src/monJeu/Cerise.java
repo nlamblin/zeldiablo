@@ -29,8 +29,9 @@ public class Cerise extends Case implements Declencheur {
 	
 	@Override
 	public void effetCase(MonJeu j) {
-		// TODO Auto-generated method stub
-		j.pj.setPv(j.pj.getPv()+10);
+		j.lCase[j.pj.y][j.pj.x]= new CaseVide();
+		if (j.pj.pv+10 > j.pj.pvMax)j.pj.pv=j.pj.pvMax;
+		else j.pj.pv+=10;
 	}
 	
 	public void afficher(int i, int j, Graphics2D g) {
