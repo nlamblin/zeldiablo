@@ -13,8 +13,8 @@ public class Main {
 	public static void main(String[] args) throws InterruptedException {
 
 		// creation du jeu particulier et de son afficheur
-		MonJeu jeu = new MonJeu(MoteurJeu.chargerLabyrinthe("../coo_zeldiablo_ferry75u_thenot5u_meurant1u_lamblin4u/Labyrinthe0.txt"));
-		jeu.setMonstres(MoteurJeu.chargerMonstres("../coo_zeldiablo_ferry75u_thenot5u_meurant1u_lamblin4u/Monstres0.txt", jeu));
+		MonJeu jeu = new MonJeu(MoteurJeu.chargerLabyrinthe("../coo_zeldiablo_ferry75u_thenot5u_meurant1u_lamblin4u/Labyrinthe1.txt"));
+		jeu.setMonstres(MoteurJeu.chargerMonstres("../coo_zeldiablo_ferry75u_thenot5u_meurant1u_lamblin4u/Monstres1.txt", jeu));
 		DessinMonJeu aff = new DessinMonJeu(jeu);
 
 		// classe qui lance le moteur de jeu generique
