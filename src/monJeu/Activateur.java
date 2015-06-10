@@ -4,7 +4,7 @@ import java.awt.Color;
 import java.awt.Graphics2D;
 import java.util.ArrayList;
 
-public class Activateur extends Case {
+public class Activateur extends Case  implements Declencheur{
 	private ArrayList<Coordonnee> aact;
 	public Activateur(){
 		aact = new ArrayList<Coordonnee>();
@@ -18,16 +18,13 @@ public class Activateur extends Case {
 		g.setColor(Color.LIGHT_GRAY);
 		g.fillRect(i * DessinMonJeu.TAILLE_CASE, j * DessinMonJeu.TAILLE_CASE, DessinMonJeu.TAILLE_CASE,DessinMonJeu.TAILLE_CASE);
 	}
-	public void activer(MonJeu j){
+
+
+	@Override
+	public void effetCase(MonJeu j) {
 		for (Coordonnee attache : aact){
 			j.lCase[attache.x][attache.y]= new CaseVide();
 		}
-	}
-
-	@Override
-	public void effetCase() {
-		// TODO Auto-generated method stub
-		
 	}
 
 }

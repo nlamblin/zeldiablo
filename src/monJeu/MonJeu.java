@@ -15,6 +15,7 @@ public class MonJeu implements Jeu {
 	/**
 	 * le personnage du jeu
 	 */
+	public int etage;
 	private boolean fini;
 	public Personnage pj;
 	public Case[][] lCase;
@@ -23,6 +24,7 @@ public class MonJeu implements Jeu {
 	 * constructeur de jeu avec un Personnage
 	 */
 	public MonJeu(Case[][] lC) {
+		etage = 0;
 		fini = false;
 		lEntite = new ArrayList<Entite>();
 		lCase = lC;

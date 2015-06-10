@@ -3,7 +3,7 @@ package monJeu;
 import java.awt.Color;
 import java.awt.Graphics2D;
 
-public class EscalierDown extends Escalier {
+public class EscalierDown extends Escalier implements Declencheur{
 
 	@Override
 	public void afficher(int i, int j, Graphics2D g) {
@@ -12,9 +12,12 @@ public class EscalierDown extends Escalier {
 	}
 	
 	@Override
-	public void effetCase() {
+	public void effetCase(MonJeu j) {
 		// TODO Auto-generated method stub
-		
+		j.etage++;
+		j.lCase = MoteurJeu.chargerLabyrinthe("../coo_zeldiablo_ferry75u_thenot5u_meurant1u_lamblin4u/Labyrinthe"+j.etage+".txt");
+		j.lEntite = MoteurJeu.chargerMonstres("../coo_zeldiablo_ferry75u_thenot5u_meurant1u_lamblin4u/Monstres"+j.etage+".txt", j);
+		j.pj.x=j.pj.x+1;
 	}
 
 }

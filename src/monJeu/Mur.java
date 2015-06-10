@@ -15,9 +15,4 @@ public class Mur extends Case{
 		g.setColor(Color.DARK_GRAY);
 		g.fillRect(i * DessinMonJeu.TAILLE_CASE, j * DessinMonJeu.TAILLE_CASE, DessinMonJeu.TAILLE_CASE,DessinMonJeu.TAILLE_CASE);
 	}
-	@Override
-	public void effetCase() {
-		// TODO Auto-generated method stub
-		
-	}
 }

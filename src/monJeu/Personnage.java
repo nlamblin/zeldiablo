@@ -19,8 +19,7 @@ import moteurJeu.Commande;
  * la classe correspondant au Personnage
  */
 public class Personnage extends Entite{
-	private boolean talisman;
-	private int etage = 0;
+	public boolean talisman;
 	/**
 	 * constructeur vide
 	 */
@@ -83,26 +82,16 @@ public class Personnage extends Entite{
 		if (!etreMort()){
 			super.seDeplacer(c);
 			if (j.lCase[y][x] instanceof Talisman){
-				talisman = true;
-				j.lCase[y][x] = new CaseVide();
+				
 			}
 			if (j.lCase[y][x] instanceof Entree && talisman){
-				j.seFinir();
+				
 			}
 			if (j.lCase[y][x] instanceof EscalierDown){
-				etage++;
-				j.lCase = MoteurJeu.chargerLabyrinthe("../coo_zeldiablo_ferry75u_thenot5u_meurant1u_lamblin4u/Labyrinthe"+etage+".txt");
-				j.lEntite = MoteurJeu.chargerMonstres("../coo_zeldiablo_ferry75u_thenot5u_meurant1u_lamblin4u/Monstres"+etage+".txt", j);
-				this.x = this.x+1;
+				
 			}
-			if (j.lCase[y][x] instanceof EscalierUp){
-				etage--;
-				j.lCase = MoteurJeu.chargerLabyrinthe("../coo_zeldiablo_ferry75u_thenot5u_meurant1u_lamblin4u/Labyrinthe"+etage+".txt");
-				j.lEntite = MoteurJeu.chargerMonstres("../coo_zeldiablo_ferry75u_thenot5u_meurant1u_lamblin4u/Monstres"+etage+".txt", j);
-				this.x = this.x+1;
-			}
-			if (j.lCase[y][x] instanceof Activateur){
-				((Activateur)j.lCase[y][x]).activer(j);
+			if (j.lCase[y][x] instanceof Declencheur){
+				((Declencheur)j.lCase[y][x]).effetCase(j);
 			}
 		}
 		else j.seFinir();
