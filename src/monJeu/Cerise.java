@@ -36,8 +36,8 @@ public class Cerise extends Case implements Declencheur {
 	public void afficher(int i, int j, Graphics2D g) {
 		g.setColor(Color.DARK_GRAY);
 		super.afficher(i, j, g);
-		if (image != null)g.drawImage(image, null, i, j);
-		else g.fillRect(i * DessinMonJeu.TAILLE_CASE, j * DessinMonJeu.TAILLE_CASE, DessinMonJeu.TAILLE_CASE,DessinMonJeu.TAILLE_CASE);
+		g.fillRect(i * DessinMonJeu.TAILLE_CASE, j * DessinMonJeu.TAILLE_CASE,i* DessinMonJeu.TAILLE_CASE,j*DessinMonJeu.TAILLE_CASE);
+		if (image != null&&champ)g.drawImage(image, null, i*DessinMonJeu.TAILLE_CASE,DessinMonJeu.TAILLE_CASE* j);
 	}
 
 }
