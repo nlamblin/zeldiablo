@@ -1,0 +1,11 @@
+décrit l'état de l'application et les difficultés rencontrées:
+
+Etat de l'application : 
+
+->   Le héro ne voit  qu’à 1 case autour de lui.
+
+Critères de validation:
+
+    Toutes les autres cases sont noirs
+    Un carré de trois cases sur trois cases  où le héros est au milieu est visible
+
