@@ -32,6 +32,6 @@ public class TestsTalisman {
 		
 		o.seDeplacer(c);
 		
-		assertTrue("La case talismant devrait encore être une case Talismant", lc[13][14] instanceof Talisman);
+		assertTrue("La case talisman devrait encore être une case Talisman", lc[13][14] instanceof Talisman);
 	}
 }
