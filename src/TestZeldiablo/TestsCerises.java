@@ -66,7 +66,6 @@ public class TestsCerises {
 		Orc o = new Orc(14, 14, mj);
 		Commande c = new Commande();
 		c.haut = true;
-		
 		o.seDeplacer(c);
 		
 		assertTrue("La case cerise devrait encore être une case cerise", lc[13][14] instanceof Cerise);

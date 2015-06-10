@@ -23,7 +23,7 @@ public class TestCollisions {
 		}
 		lc[13][14] = new Mur();
 		MonJeu mj = new MonJeu(lc);
-		Entite e = new Personnage(14, 14, mj);
+		Personnage e = new Personnage(14, 14, mj);
 		Commande c = new Commande();
 		c.haut= true;
 		e.seDeplacer(c);
