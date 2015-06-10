@@ -30,34 +30,37 @@ public abstract class Entite {
 	protected BufferedImage imageGaucheAtt;
 	protected BufferedImage imageDroiteAtt;
 	protected int orientation;
-
+	protected boolean etatAttaque;
 	
 	public Entite(int xParam, int yParam,MonJeu jeu) {
 		j = jeu;
 		x = xParam;
 		y = yParam;
+		etatAttaque = false;
 	}
 	
 	public void changerImage(Commande c){
 		if (c.bas){
-			if(c.attaque == true) image = imageBasAtt;
-			else image = imageBas;
+			image = imageBas;
 			orientation = Entite.bas;
 		}
 		if (c.haut){
-			if(c.attaque == true) image = imageHautAtt;
-			else image = imageHaut;
+			image = imageHaut;
 			orientation = Entite.haut;
 		}
 		if (c.gauche){
-			if(c.attaque == true) image = imageGaucheAtt;
-			else image = imageGauche;
+			image = imageGauche;
 			orientation = Entite.gauche;
 		}
 		if (c.droite){
-			if(c.attaque == true) image = imageDroiteAtt;
-			else image = imageDroite;
+			image = imageDroite;
 			orientation = Entite.droite;
+		}
+		if(c.attaque) {
+			if(orientation == Entite.droite) image = imageDroiteAtt;
+			if(orientation == Entite.gauche) image = imageGaucheAtt;
+			if(orientation == Entite.bas) image = imageBasAtt;
+			if(orientation == Entite.haut) image = imageHautAtt;
 		}
 	}
 	public int getX(){
