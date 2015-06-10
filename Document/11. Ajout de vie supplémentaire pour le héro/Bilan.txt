@@ -1,0 +1,10 @@
+décrit l'état de l'application et les difficultés rencontrées:
+
+Etat de l'application : 
+
+->    Le héro lorsqu’il se rend sur la case où il y a une cerise récupère  10 points de vie.
+
+Critères de validation:
+
+    Le héro récupère de la vie lorsqu’il passe sur une cerise 
+    Lorsque le héro a récupérée la cerise, elle n’est  plus visible
