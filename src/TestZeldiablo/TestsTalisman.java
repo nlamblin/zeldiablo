@@ -15,26 +15,6 @@ import moteurJeu.Commande;
 import org.junit.Test;
 
 public class TestsTalisman {
-
-	@Test
-	public void testSituationSurTalisman() {
-		Case [][] lc =new Case[16][16];
-		for (int i = 0;i<15;i++){
-			for (int j = 0;j<15;j++){
-				lc [i][j] = new CaseVide();
-			}
-		}
-		lc[13][14] = new Talisman();
-		MonJeu mj = new MonJeu(lc);
-		Personnage p = new Personnage(14, 14, mj);
-		Commande c = new Commande();
-		c.haut = true;
-		
-		p.seDeplacer(c);
-		
-		assertEquals("Le joueur aurait du prendre le talisman", true, p.getTalisman());
-	}
-	
 	
 	@Test
 	public void testMonstreRecupererPasTalisman() {
@@ -48,7 +28,7 @@ public class TestsTalisman {
 		MonJeu mj = new MonJeu(lc);
 		Orc o = new Orc(14, 14, mj);
 		Commande c = new Commande();
-		c.haut = true;
+		c.gauche = true;
 		
 		o.seDeplacer(c);
 		
