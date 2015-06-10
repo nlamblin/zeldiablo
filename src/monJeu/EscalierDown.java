@@ -7,6 +7,8 @@ import java.io.IOException;
 
 import javax.imageio.ImageIO;
 
+import moteurJeu.Commande;
+
 public class EscalierDown extends Escalier implements Declencheur{
 	public EscalierDown(){
 		// TODO Auto-generated constructor stub
@@ -31,7 +33,9 @@ public class EscalierDown extends Escalier implements Declencheur{
 		j.etage++;
 		j.lCase = MoteurJeu.chargerLabyrinthe("../coo_zeldiablo_ferry75u_thenot5u_meurant1u_lamblin4u/Labyrinthe"+j.etage+".txt");
 		j.lEntite = MoteurJeu.chargerMonstres("../coo_zeldiablo_ferry75u_thenot5u_meurant1u_lamblin4u/Monstres"+j.etage+".txt", j);
-		j.pj.x=j.pj.x+1;
+		Commande c = new Commande();
+		c.droite = true;
+		j.pj.seDeplacer(c);
 	}
 
 }
