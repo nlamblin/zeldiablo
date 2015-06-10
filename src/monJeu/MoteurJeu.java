@@ -53,6 +53,7 @@ public class MoteurJeu {
 					case 'S':
 						lC[i][j]=new Mur();
 						aact.add(new Coordonnee(i,j));
+						break;
 					case 'C':
 						lC[i][j]=new Cerise();
 						break;

@@ -82,13 +82,14 @@ public class Personnage extends Entite{
 		if (!etreMort()){
 			super.seDeplacer(c);
 			for (int i = 0;i< 16;i++){
-				for (int j1=0;j1< 16;j1++)
-				j.lCase[i][j1].champ = false;
+				for (int j1=0;j1< 16;j1++){
+					j.lCase[i][j1].champ = false;
+				}
 			}
 			for (int i = x-3;i<=x+3;i++){
 				if (i>=j.lCase.length)break;
 				if (i<0)i=0;
-				for (int j1=y-3;j1<=y+3;j1++){
+				for (int j1=y-2;j1<=y+3;j1++){
 					if (j1>=j.lCase.length)break;
 					if (j1<0)j1=0;
 					j.lCase[j1][i].champ = true;
