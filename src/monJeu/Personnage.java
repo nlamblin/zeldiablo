@@ -42,8 +42,8 @@ public class Personnage extends Entite{
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		pv = 80;
-		pvMax = 80;
+		pv = 50;
+		pvMax = 50;
 		degats=2;
 	}
 
