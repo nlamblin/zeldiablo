@@ -10,7 +10,7 @@ import javax.imageio.ImageIO;
 public class CaseVide extends Case{
 	public CaseVide(){
 		try {
-			image = ImageIO.read(new File("../coo_zeldiablo_ferry75u_thenot5u_meurant1u_lamblin4u/src/image/OrcDroite.png"));
+			image = ImageIO.read(new File("../coo_zeldiablo_ferry75u_thenot5u_meurant1u_lamblin4u/src/image/Sol.png"));
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -21,6 +21,7 @@ public class CaseVide extends Case{
 		g.setColor(Color.LIGHT_GRAY);
 		super.afficher(i, j, g);
 		g.fillRect(i * DessinMonJeu.TAILLE_CASE, j * DessinMonJeu.TAILLE_CASE, DessinMonJeu.TAILLE_CASE,DessinMonJeu.TAILLE_CASE);
+		if (image != null&&champ)g.drawImage(image, null, i*DessinMonJeu.TAILLE_CASE, j*DessinMonJeu.TAILLE_CASE);
 	}
 
 }

@@ -61,6 +61,7 @@ public class MoteurJeu {
 					act.attacher(a);
 				}
 			}
+			br.close();
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
 		} catch (IOException e) {
@@ -87,6 +88,7 @@ public class MoteurJeu {
 					}
 				}
 			}
+			br.close();
 			
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
