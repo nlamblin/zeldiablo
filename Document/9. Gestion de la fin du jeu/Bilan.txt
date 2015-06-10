@@ -1,0 +1,13 @@
+décrit l'état de l'application et les difficultés rencontrées:
+
+Etat de l'application : 
+
+
+Lorsque le héros n'a plus de points de vie, le jeu s'arrête et la partie est perdue. Un message « Game over ! » apparaît à l’écran
+Lorsque le héro revient sur la case de départ avec le talisman, le jeu s’arrête et la partie est gagnée. Un message « You win ! » apparaît à l’écran.
+
+Critères de validation:
+
+    Le héros par défaut dispose de 10 points de vie.
+    Quand le héros meurt, un message de fin est affiché sur la console et le jeu s'arrête.
+    Lorsque le héro revient sur la case de départ avec le talisman un message de fin est affiché sur la console et le jeu s’arrête
