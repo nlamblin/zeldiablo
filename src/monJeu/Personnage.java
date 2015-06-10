@@ -140,18 +140,21 @@ public class Personnage extends Entite{
 					e.subirDegats(this.getDegats());
 					etatAttaque = true;
 				}
+				else etatAttaque = false;
 				break;
 			case Entite.gauche:
 				if(this.x-1 == e.getX() && this.y == e.getY()) {
 					e.subirDegats(this.getDegats());
 					etatAttaque = true;
 				}
+				else etatAttaque = false;
 				break;
 			case Entite.droite:
 				if(this.x+1 == e.getX() && this.y == e.getY()) {
 					e.subirDegats(this.getDegats());
 					etatAttaque = true;
 				}
+				else etatAttaque = false;
 				break;
 			}
 		}
