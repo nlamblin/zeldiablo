@@ -132,22 +132,29 @@ public class Personnage extends Entite{
 			case Entite.haut:
 				if(this.x == e.getX() && this.y-1 == e.getY()) {
 					e.subirDegats(this.getDegats());
+					etatAttaque = true;
 				}
-					break;
+				break;
 			case Entite.bas:
 				if(this.x == e.getX() && this.y+1 == e.getY()) {
 					e.subirDegats(this.getDegats());
+					etatAttaque = true;
 				}
+				else etatAttaque = false;
 				break;
 			case Entite.gauche:
 				if(this.x-1 == e.getX() && this.y == e.getY()) {
 					e.subirDegats(this.getDegats());
+					etatAttaque = true;
 				}
+				else etatAttaque = false;
 				break;
 			case Entite.droite:
 				if(this.x+1 == e.getX() && this.y == e.getY()) {
 					e.subirDegats(this.getDegats());
+					etatAttaque = true;
 				}
+				else etatAttaque = false;
 				break;
 			}
 		}
